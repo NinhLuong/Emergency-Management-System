@@ -1851,7 +1851,7 @@ border-radius: 29px;</string>
                         <property name="geometry">
                          <rect>
                           <x>70</x>
-                          <y>40</y>
+                          <y>30</y>
                           <width>131</width>
                           <height>31</height>
                          </rect>
@@ -1909,7 +1909,7 @@ border-radius: 29px;</string>
                         <property name="geometry">
                          <rect>
                           <x>70</x>
-                          <y>40</y>
+                          <y>30</y>
                           <width>120</width>
                           <height>31</height>
                          </rect>
@@ -1967,7 +1967,7 @@ border-radius: 29px;</string>
                         <property name="geometry">
                          <rect>
                           <x>70</x>
-                          <y>40</y>
+                          <y>30</y>
                           <width>120</width>
                           <height>31</height>
                          </rect>
