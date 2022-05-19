@@ -14,8 +14,9 @@ from . resources_rc import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(940, 560)
+        MainWindow.resize(940, 569)
         MainWindow.setMinimumSize(QtCore.QSize(940, 560))
+        MainWindow.setMaximumSize(QtCore.QSize(940, 569))
         self.styleSheet = QtWidgets.QWidget(MainWindow)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
@@ -26,8 +27,8 @@ class Ui_MainWindow(object):
         self.styleSheet.setFont(font)
         self.styleSheet.setStyleSheet("/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "\n"
-"\n"
-"XỬ LÝ TÌNH HUỐNG KHẨN CẤP\n"
+"SET APP STYLESHEET - FULL STYLES HERE\n"
+"DARK THEME - DRACULA COLOR BASED\n"
 "\n"
 "///////////////////////////////////////////////////////////////////////////////////////////////// */\n"
 "\n"
@@ -66,7 +67,6 @@ class Ui_MainWindow(object):
 "}\n"
 "#topLogo {\n"
 "    background-color: rgb(33, 37, 43);\n"
-"    background-image: url(:/images/topLogo.jpg);\n"
 "    background-position: centered;\n"
 "    background-repeat: no-repeat;\n"
 "}\n"
@@ -550,10 +550,9 @@ class Ui_MainWindow(object):
         self.leftMenuBg.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.leftMenuBg.setFrameShadow(QtWidgets.QFrame.Raised)
         self.leftMenuBg.setObjectName("leftMenuBg")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.leftMenuBg)
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_3.setSpacing(0)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.leftMenuBg)
+        self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_3.setObjectName("gridLayout_3")
         self.topLogoInfo = QtWidgets.QFrame(self.leftMenuBg)
         self.topLogoInfo.setMinimumSize(QtCore.QSize(0, 50))
         self.topLogoInfo.setMaximumSize(QtCore.QSize(16777215, 50))
@@ -564,7 +563,7 @@ class Ui_MainWindow(object):
         self.topLogo.setGeometry(QtCore.QRect(10, 5, 42, 42))
         self.topLogo.setMinimumSize(QtCore.QSize(42, 42))
         self.topLogo.setMaximumSize(QtCore.QSize(42, 42))
-        self.topLogo.setStyleSheet("image: url(:/images/topLogo.jpg);")
+        self.topLogo.setStyleSheet("image: url(:/images/images/images/logo2.png);")
         self.topLogo.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.topLogo.setFrameShadow(QtWidgets.QFrame.Raised)
         self.topLogo.setObjectName("topLogo")
@@ -591,7 +590,7 @@ class Ui_MainWindow(object):
         self.titleLeftDescription.setFont(font)
         self.titleLeftDescription.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.titleLeftDescription.setObjectName("titleLeftDescription")
-        self.verticalLayout_3.addWidget(self.topLogoInfo)
+        self.gridLayout_3.addWidget(self.topLogoInfo, 0, 0, 1, 1)
         self.leftMenuFrame = QtWidgets.QFrame(self.leftMenuBg)
         self.leftMenuFrame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.leftMenuFrame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -624,6 +623,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.toggleButton.setFont(font)
         self.toggleButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.toggleButton.setMouseTracking(False)
         self.toggleButton.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.toggleButton.setStyleSheet("background-image: url(:/icons/images/icons/icon_menu.png);")
         self.toggleButton.setObjectName("toggleButton")
@@ -761,7 +761,7 @@ class Ui_MainWindow(object):
         self.toggleLeftBox.setObjectName("toggleLeftBox")
         self.verticalLayout_9.addWidget(self.toggleLeftBox)
         self.verticalMenuLayout.addWidget(self.bottomMenu, 0, QtCore.Qt.AlignBottom)
-        self.verticalLayout_3.addWidget(self.leftMenuFrame)
+        self.gridLayout_3.addWidget(self.leftMenuFrame, 1, 0, 1, 1)
         self.appLayout.addWidget(self.leftMenuBg)
         self.extraLeftBox = QtWidgets.QFrame(self.bgApp)
         self.extraLeftBox.setMinimumSize(QtCore.QSize(0, 0))
@@ -977,47 +977,24 @@ class Ui_MainWindow(object):
         self.settingsTopBtn.setObjectName("settingsTopBtn")
         self.horizontalLayout_2.addWidget(self.settingsTopBtn)
         self.minimizeAppBtn = QtWidgets.QPushButton(self.rightButtons)
-        self.minimizeAppBtn.setMinimumSize(QtCore.QSize(28, 28))
-        self.minimizeAppBtn.setMaximumSize(QtCore.QSize(28, 28))
-        self.minimizeAppBtn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.minimizeAppBtn.setStyleSheet("image: url(:/images/images/images/button_3.png);")
         self.minimizeAppBtn.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/icons/images/icons/icon_minimize.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.minimizeAppBtn.setIcon(icon2)
-        self.minimizeAppBtn.setIconSize(QtCore.QSize(20, 20))
         self.minimizeAppBtn.setObjectName("minimizeAppBtn")
         self.horizontalLayout_2.addWidget(self.minimizeAppBtn)
         self.maximizeRestoreAppBtn = QtWidgets.QPushButton(self.rightButtons)
-        self.maximizeRestoreAppBtn.setMinimumSize(QtCore.QSize(28, 28))
-        self.maximizeRestoreAppBtn.setMaximumSize(QtCore.QSize(28, 28))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        font.setStyleStrategy(QtGui.QFont.PreferDefault)
-        self.maximizeRestoreAppBtn.setFont(font)
-        self.maximizeRestoreAppBtn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.maximizeRestoreAppBtn.setStyleSheet("image: url(:/images/images/images/button_2.png);")
         self.maximizeRestoreAppBtn.setText("")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/icons/images/icons/icon_maximize.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.maximizeRestoreAppBtn.setIcon(icon3)
-        self.maximizeRestoreAppBtn.setIconSize(QtCore.QSize(20, 20))
         self.maximizeRestoreAppBtn.setObjectName("maximizeRestoreAppBtn")
         self.horizontalLayout_2.addWidget(self.maximizeRestoreAppBtn)
         self.closeAppBtn = QtWidgets.QPushButton(self.rightButtons)
-        self.closeAppBtn.setMinimumSize(QtCore.QSize(28, 28))
-        self.closeAppBtn.setMaximumSize(QtCore.QSize(28, 28))
-        self.closeAppBtn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.closeAppBtn.setStyleSheet("image: url(:/images/images/images/button_1.png);")
         self.closeAppBtn.setText("")
-        self.closeAppBtn.setIcon(icon)
-        self.closeAppBtn.setIconSize(QtCore.QSize(20, 20))
         self.closeAppBtn.setObjectName("closeAppBtn")
         self.horizontalLayout_2.addWidget(self.closeAppBtn)
         self.horizontalLayout.addWidget(self.rightButtons, 0, QtCore.Qt.AlignRight)
         self.verticalLayout_2.addWidget(self.contentTopBg)
         self.contentBottom = QtWidgets.QFrame(self.contentBox)
+        self.contentBottom.setStyleSheet("")
         self.contentBottom.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.contentBottom.setFrameShadow(QtWidgets.QFrame.Raised)
         self.contentBottom.setObjectName("contentBottom")
@@ -1034,7 +1011,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.pagesContainer = QtWidgets.QFrame(self.content)
-        self.pagesContainer.setStyleSheet("")
+        self.pagesContainer.setStyleSheet("background-image: url(:/images/images/images/bg_2.png);")
         self.pagesContainer.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.pagesContainer.setFrameShadow(QtWidgets.QFrame.Raised)
         self.pagesContainer.setObjectName("pagesContainer")
@@ -1046,7 +1023,110 @@ class Ui_MainWindow(object):
         self.stackedWidget.setStyleSheet("background: transparent;")
         self.stackedWidget.setObjectName("stackedWidget")
         self.home = QtWidgets.QWidget()
+        self.home.setStyleSheet("background-position: center;\n"
+"background-repeat: no-repeat;")
         self.home.setObjectName("home")
+        self.frame = QtWidgets.QFrame(self.home)
+        self.frame.setGeometry(QtCore.QRect(600, 30, 211, 81))
+        self.frame.setStyleSheet("border: 0.4px solid rgb(255, 255, 255);\n"
+"background-image: url(:/images/images/images/5172658.png);\n"
+"border-radius: 20px;")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.pushButton_2 = QtWidgets.QPushButton(self.frame)
+        self.pushButton_2.setGeometry(QtCore.QRect(10, 10, 61, 61))
+        self.pushButton_2.setStyleSheet("image: url(:/images/images/images/113.png);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 29px;")
+        self.pushButton_2.setText("")
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.frame_7 = QtWidgets.QFrame(self.frame)
+        self.frame_7.setGeometry(QtCore.QRect(80, 20, 131, 31))
+        self.frame_7.setStyleSheet("background-image: url(:/images/images/images/canhsat.png);")
+        self.frame_7.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_7.setObjectName("frame_7")
+        self.frame_2 = QtWidgets.QFrame(self.home)
+        self.frame_2.setGeometry(QtCore.QRect(600, 130, 211, 81))
+        self.frame_2.setStyleSheet("border: 0.4px solid rgb(255, 255, 255);\n"
+"background-image: url(:/images/images/images/5172658.png);\n"
+"border-radius: 20px;")
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.frame_2)
+        self.pushButton_3.setGeometry(QtCore.QRect(10, 10, 61, 61))
+        self.pushButton_3.setStyleSheet("image: url(:/images/images/images/114.png);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 29px;")
+        self.pushButton_3.setText("")
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.frame_8 = QtWidgets.QFrame(self.frame_2)
+        self.frame_8.setGeometry(QtCore.QRect(80, 20, 120, 31))
+        self.frame_8.setStyleSheet("background-image: url(:/images/images/images/cuuhoa.png);")
+        self.frame_8.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_8.setObjectName("frame_8")
+        self.frame_3 = QtWidgets.QFrame(self.home)
+        self.frame_3.setGeometry(QtCore.QRect(600, 230, 211, 81))
+        self.frame_3.setStyleSheet("border: 0.4px solid rgb(255, 255, 255);\n"
+"background-image: url(:/images/images/images/5172658.png);\n"
+"border-radius: 20px;")
+        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.pushButton_4 = QtWidgets.QPushButton(self.frame_3)
+        self.pushButton_4.setGeometry(QtCore.QRect(10, 10, 61, 61))
+        self.pushButton_4.setStyleSheet("image: url(:/images/images/images/115.png);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 29px;")
+        self.pushButton_4.setText("")
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.frame_9 = QtWidgets.QFrame(self.frame_3)
+        self.frame_9.setGeometry(QtCore.QRect(80, 20, 120, 31))
+        self.frame_9.setStyleSheet("background-image: url(:/images/images/images/capcuu.png);")
+        self.frame_9.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_9.setObjectName("frame_9")
+        self.frame_4 = QtWidgets.QFrame(self.home)
+        self.frame_4.setGeometry(QtCore.QRect(600, 330, 211, 81))
+        self.frame_4.setStyleSheet("border: 0.4px solid rgb(255, 255, 255);\n"
+"background-image: url(:/images/images/images/5172658.png);\n"
+"border-radius: 20px;")
+        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.pushButton_5 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_5.setGeometry(QtCore.QRect(10, 10, 61, 61))
+        self.pushButton_5.setStyleSheet("image: url(:/images/images/images/BQL.png);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 29px;")
+        self.pushButton_5.setText("")
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.frame_5 = QtWidgets.QFrame(self.home)
+        self.frame_5.setGeometry(QtCore.QRect(30, 30, 541, 281))
+        self.frame_5.setStyleSheet("border-radius: 20px;\n"
+"background-image: url(:/images/images/images/2489157.png);")
+        self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_5.setObjectName("frame_5")
+        self.frame_14 = QtWidgets.QFrame(self.home)
+        self.frame_14.setGeometry(QtCore.QRect(30, 350, 61, 61))
+        self.frame_14.setStyleSheet("background-image: url(:/images/images/images/mic.png);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 30px;")
+        self.frame_14.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_14.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_14.setObjectName("frame_14")
+        self.frame_6 = QtWidgets.QFrame(self.home)
+        self.frame_6.setGeometry(QtCore.QRect(120, 350, 451, 61))
+        self.frame_6.setStyleSheet("border: 0.4px solid rgb(255, 255, 255);\n"
+"background-image: url(:/images/images/images/5172658.png);\n"
+"border-radius: 20px;")
+        self.frame_6.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_6.setObjectName("frame_6")
         self.stackedWidget.addWidget(self.home)
         self.widgets = QtWidgets.QWidget()
         self.widgets.setStyleSheet("b")
@@ -1118,9 +1198,9 @@ class Ui_MainWindow(object):
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton.setStyleSheet("background-color: rgb(52, 59, 72);")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/icons/images/icons/cil-folder-open.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton.setIcon(icon4)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/icons/images/icons/cil-folder-open.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton.setIcon(icon2)
         self.pushButton.setObjectName("pushButton")
         self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
         self.labelVersion_3 = QtWidgets.QLabel(self.frame_content_wid_1)
@@ -1175,7 +1255,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 278, 222))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 222, 222))
         self.scrollAreaWidgetContents.setStyleSheet(" QScrollBar:vertical {\n"
 "    border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1224,9 +1304,9 @@ class Ui_MainWindow(object):
         self.commandLinkButton = QtWidgets.QCommandLinkButton(self.row_2)
         self.commandLinkButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/icons/images/icons/cil-link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.commandLinkButton.setIcon(icon5)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/icons/images/icons/cil-link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.commandLinkButton.setIcon(icon3)
         self.commandLinkButton.setObjectName("commandLinkButton")
         self.gridLayout_2.addWidget(self.commandLinkButton, 1, 6, 1, 1)
         self.horizontalSlider = QtWidgets.QSlider(self.row_2)
@@ -1479,7 +1559,7 @@ class Ui_MainWindow(object):
         self.btn_logout.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_logout.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.btn_logout.setStyleSheet("background-image: url(:/icons/images/icons/cil-account-logout.png);")
-        self.btn_logout.setObjectName("btn_logout")
+        self.btn_logout.setObjectName("btn_logout")        
         self.verticalLayout_14.addWidget(self.btn_logout)
         self.verticalLayout_13.addWidget(self.topMenus, 0, QtCore.Qt.AlignTop)
         self.verticalLayout_7.addWidget(self.contentSettings)
@@ -1526,14 +1606,15 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.styleSheet)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.titleLeftApp.setText(_translate("MainWindow", "Python Project"))
-        self.toggleButton.setText(_translate("MainWindow", "Menu"))
+        self.titleLeftApp.setText(_translate("MainWindow", "Emergency Services"))
+        self.titleLeftDescription.setText(_translate("MainWindow", "Uy_Dat_Ninh"))
+        self.toggleButton.setText(_translate("MainWindow", "Hide"))
         self.btn_home.setText(_translate("MainWindow", "Home"))
         self.btn_widgets.setText(_translate("MainWindow", "Widgets"))
         self.btn_new.setText(_translate("MainWindow", "New"))
@@ -1546,13 +1627,19 @@ class Ui_MainWindow(object):
         self.btn_adjustments.setText(_translate("MainWindow", "Adjustments"))
         self.btn_more.setText(_translate("MainWindow", "More"))
         self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"))
-
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">PyDracula</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">An interface created using Python and PySide (support for PyQt), and with colors based on the Dracula theme created by Zeno Rocha.</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">MIT License</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by: Wanderson M. Pimenta</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert UI</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-uic main.ui &gt; ui_main.py</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert QRC</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p></body></html>"))
         self.titleRightInfo.setText(_translate("MainWindow", "XỬ LÝ TÌNH HUỐNG KHẨN CẤP"))
         self.settingsTopBtn.setToolTip(_translate("MainWindow", "Settings"))
-        self.minimizeAppBtn.setToolTip(_translate("MainWindow", "Minimize"))
-        self.maximizeRestoreAppBtn.setToolTip(_translate("MainWindow", "Maximize"))
-        self.closeAppBtn.setToolTip(_translate("MainWindow", "Close"))
         self.labelBoxBlenderInstalation.setText(_translate("MainWindow", "FILE BOX"))
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "Type here"))
         self.pushButton.setText(_translate("MainWindow", "Open"))
@@ -1619,4 +1706,4 @@ class Ui_MainWindow(object):
         self.btn_message.setText(_translate("MainWindow", "Message"))
         self.btn_print.setText(_translate("MainWindow", "Print"))
         self.btn_logout.setText(_translate("MainWindow", "Logout"))
-        self.creditsLabel.setText(_translate("MainWindow", "By: Uy&Đạt&Ninh"))
+
