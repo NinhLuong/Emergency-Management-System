@@ -37,18 +37,11 @@ def get_audio():
             print("...")
             return 0
 
-def stop():
-    speak("Hẹn gặp lại bạn sau!")
-
 def get_text():
-    for i in range(3):
+    while True:
         text = get_audio()
         if text:
             return text.lower()
-        elif i < 2:
-            speak("Bot không nghe rõ")
-    time.sleep(2)
-    stop()
     return 0
 
 def help_me():
@@ -65,8 +58,6 @@ def get_time(text):
     elif "ngày" in text:
         speak("Hôm nay là ngày %d tháng %d năm %d" %
               (now.day, now.month, now.year))
-    else:
-        speak("Bot chưa hiểu ý của bạn. Bạn nói lại được không?")
 
 def current_weather():
     speak("Bạn muốn xem thời tiết ở đâu ạ.")
@@ -106,16 +97,12 @@ def current_weather():
 def assistant():
     while True:
         text = get_text()
-        if not text:
-            break
-        elif "dừng" in text or "tạm biệt" in text or "chào robot" in text or "ngủ thôi" in text:
-            stop()
-            break
-        elif "có thể làm gì" in text:
+        
+        if "có thể làm gì" in text:
             help_me()
         elif "thời tiết"  in text:
             current_weather()
         elif "ngày" in text or "giờ" in text or "tháng"  in text or" phút" in text or "năm" in text: 
             get_time(text)
-        else:
-            speak("Bạn cần Bot giúp gì ạ?")
+
+assistant()
