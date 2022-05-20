@@ -1,4 +1,4 @@
-Dự án: Giao diện xử lý tình huống khẩn cấp
+*Dự án: Giao diện xử lý tình huống khẩn cấp
 By: Uy - Đạt - Ninh
 Note:
 1. File dự án ở trong Folder XuLyTinhHuongKhanCap
