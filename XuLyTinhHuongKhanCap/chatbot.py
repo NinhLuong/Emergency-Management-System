@@ -97,12 +97,10 @@ def current_weather():
 def assistant():
     while True:
         text = get_text()
-        
+
         if "có thể làm gì" in text:
             help_me()
         elif "thời tiết"  in text:
             current_weather()
         elif "ngày" in text or "giờ" in text or "tháng"  in text or" phút" in text or "năm" in text: 
             get_time(text)
-
-assistant()
