@@ -713,7 +713,7 @@ class Ui_MainWindow(object):
         self.btn_save.setStyleSheet("background-image: url(:/icons/images/icons/cil-save.png)")
         self.btn_save.setObjectName("btn_save")
         self.verticalLayout_8.addWidget(self.btn_save)
-        self.btn_exit = QtWidgets.QPushButton(self.topMenu)
+        '''self.btn_exit = QtWidgets.QPushButton(self.topMenu)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -731,7 +731,7 @@ class Ui_MainWindow(object):
         self.btn_exit.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.btn_exit.setStyleSheet("background-image: url(:/icons/images/icons/cil-x.png);")
         self.btn_exit.setObjectName("btn_exit")
-        self.verticalLayout_8.addWidget(self.btn_exit)
+        self.verticalLayout_8.addWidget(self.btn_exit)'''
         self.verticalMenuLayout.addWidget(self.topMenu, 0, QtCore.Qt.AlignTop)
         self.bottomMenu = QtWidgets.QFrame(self.leftMenuFrame)
         self.bottomMenu.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -741,7 +741,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.toggleLeftBox = QtWidgets.QPushButton(self.bottomMenu)
+        '''self.toggleLeftBox = QtWidgets.QPushButton(self.bottomMenu)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -759,7 +759,7 @@ class Ui_MainWindow(object):
         self.toggleLeftBox.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.toggleLeftBox.setStyleSheet("background-image: url(:/icons/images/icons/icon_settings.png);")
         self.toggleLeftBox.setObjectName("toggleLeftBox")
-        self.verticalLayout_9.addWidget(self.toggleLeftBox)
+        self.verticalLayout_9.addWidget(self.toggleLeftBox)'''
         self.verticalMenuLayout.addWidget(self.bottomMenu, 0, QtCore.Qt.AlignBottom)
         self.gridLayout_3.addWidget(self.leftMenuFrame, 1, 0, 1, 1)
         self.appLayout.addWidget(self.leftMenuBg)
@@ -1597,7 +1597,7 @@ class Ui_MainWindow(object):
         self.btn_widgets.setText(_translate("MainWindow", "Widgets"))
         self.btn_new.setText(_translate("MainWindow", "New"))
         self.btn_save.setText(_translate("MainWindow", "Save"))
-        self.btn_exit.setText(_translate("MainWindow", "Exit"))
+        '''self.btn_exit.setText(_translate("MainWindow", "Exit"))
         self.toggleLeftBox.setText(_translate("MainWindow", "Left Box"))
         self.extraLabel.setText(_translate("MainWindow", "Left Box"))
         self.extraCloseColumnBtn.setToolTip(_translate("MainWindow", "Close left box"))
@@ -1615,7 +1615,7 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert UI</span></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-uic main.ui &gt; ui_main.py</span></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert QRC</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p></body></html>"))
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p></body></html>"))'''
         self.titleRightInfo.setText(_translate("MainWindow", "XỬ LÝ TÌNH HUỐNG KHẨN CẤP"))
         self.settingsTopBtn.setToolTip(_translate("MainWindow", "Settings"))
         self.labelBoxBlenderInstalation.setText(_translate("MainWindow", "FILE BOX"))
