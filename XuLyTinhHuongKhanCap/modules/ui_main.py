@@ -14,9 +14,9 @@ from . resources_rc import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(940, 569)
-        MainWindow.setMinimumSize(QtCore.QSize(940, 560))
-        MainWindow.setMaximumSize(QtCore.QSize(940, 569))
+        MainWindow.resize(1020, 596)
+        MainWindow.setMinimumSize(QtCore.QSize(1020, 596))
+        MainWindow.setMaximumSize(QtCore.QSize(1020, 596))
         self.styleSheet = QtWidgets.QWidget(MainWindow)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
@@ -713,25 +713,6 @@ class Ui_MainWindow(object):
         self.btn_save.setStyleSheet("background-image: url(:/icons/images/icons/cil-save.png)")
         self.btn_save.setObjectName("btn_save")
         self.verticalLayout_8.addWidget(self.btn_save)
-        '''self.btn_exit = QtWidgets.QPushButton(self.topMenu)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_exit.sizePolicy().hasHeightForWidth())
-        self.btn_exit.setSizePolicy(sizePolicy)
-        self.btn_exit.setMinimumSize(QtCore.QSize(0, 45))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.btn_exit.setFont(font)
-        self.btn_exit.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btn_exit.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.btn_exit.setStyleSheet("background-image: url(:/icons/images/icons/cil-x.png);")
-        self.btn_exit.setObjectName("btn_exit")
-        self.verticalLayout_8.addWidget(self.btn_exit)'''
         self.verticalMenuLayout.addWidget(self.topMenu, 0, QtCore.Qt.AlignTop)
         self.bottomMenu = QtWidgets.QFrame(self.leftMenuFrame)
         self.bottomMenu.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -741,25 +722,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
-        '''self.toggleLeftBox = QtWidgets.QPushButton(self.bottomMenu)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.toggleLeftBox.sizePolicy().hasHeightForWidth())
-        self.toggleLeftBox.setSizePolicy(sizePolicy)
-        self.toggleLeftBox.setMinimumSize(QtCore.QSize(0, 45))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.toggleLeftBox.setFont(font)
-        self.toggleLeftBox.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.toggleLeftBox.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.toggleLeftBox.setStyleSheet("background-image: url(:/icons/images/icons/icon_settings.png);")
-        self.toggleLeftBox.setObjectName("toggleLeftBox")
-        self.verticalLayout_9.addWidget(self.toggleLeftBox)'''
         self.verticalMenuLayout.addWidget(self.bottomMenu, 0, QtCore.Qt.AlignBottom)
         self.gridLayout_3.addWidget(self.leftMenuFrame, 1, 0, 1, 1)
         self.appLayout.addWidget(self.leftMenuBg)
@@ -1023,11 +985,12 @@ class Ui_MainWindow(object):
         self.stackedWidget.setStyleSheet("background: transparent;")
         self.stackedWidget.setObjectName("stackedWidget")
         self.home = QtWidgets.QWidget()
-        self.home.setStyleSheet("background-position: center;\n"
+        self.home.setStyleSheet(
+"background-position: center;\n"
 "background-repeat: no-repeat;")
         self.home.setObjectName("home")
         self.frame = QtWidgets.QFrame(self.home)
-        self.frame.setGeometry(QtCore.QRect(600, 30, 211, 81))
+        self.frame.setGeometry(QtCore.QRect(670, 20, 211, 81))
         self.frame.setStyleSheet("border: 0.4px solid rgb(255, 255, 255);\n"
 "background-image: url(:/images/images/images/5172658.png);\n"
 "border-radius: 20px;")
@@ -1036,6 +999,7 @@ class Ui_MainWindow(object):
         self.frame.setObjectName("frame")
         self.pushButton_2 = QtWidgets.QPushButton(self.frame)
         self.pushButton_2.setGeometry(QtCore.QRect(10, 10, 61, 61))
+        self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setStyleSheet("image: url(:/images/images/images/113.png);\n"
 "border: 3px solid rgb(255, 255, 255);\n"
 "border-radius: 29px;")
@@ -1048,7 +1012,7 @@ class Ui_MainWindow(object):
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_7.setObjectName("frame_7")
         self.frame_2 = QtWidgets.QFrame(self.home)
-        self.frame_2.setGeometry(QtCore.QRect(600, 130, 211, 81))
+        self.frame_2.setGeometry(QtCore.QRect(670, 150, 211, 81))
         self.frame_2.setStyleSheet("border: 0.4px solid rgb(255, 255, 255);\n"
 "background-image: url(:/images/images/images/5172658.png);\n"
 "border-radius: 20px;")
@@ -1057,6 +1021,7 @@ class Ui_MainWindow(object):
         self.frame_2.setObjectName("frame_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_3.setGeometry(QtCore.QRect(10, 10, 61, 61))
+        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_3.setStyleSheet("image: url(:/images/images/images/114.png);\n"
 "border: 3px solid rgb(255, 255, 255);\n"
 "border-radius: 29px;")
@@ -1069,7 +1034,7 @@ class Ui_MainWindow(object):
         self.frame_8.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_8.setObjectName("frame_8")
         self.frame_3 = QtWidgets.QFrame(self.home)
-        self.frame_3.setGeometry(QtCore.QRect(600, 230, 211, 81))
+        self.frame_3.setGeometry(QtCore.QRect(670, 280, 211, 81))
         self.frame_3.setStyleSheet("border: 0.4px solid rgb(255, 255, 255);\n"
 "background-image: url(:/images/images/images/5172658.png);\n"
 "border-radius: 20px;")
@@ -1078,6 +1043,7 @@ class Ui_MainWindow(object):
         self.frame_3.setObjectName("frame_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.frame_3)
         self.pushButton_4.setGeometry(QtCore.QRect(10, 10, 61, 61))
+        self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_4.setStyleSheet("image: url(:/images/images/images/115.png);\n"
 "border: 3px solid rgb(255, 255, 255);\n"
 "border-radius: 29px;")
@@ -1090,7 +1056,7 @@ class Ui_MainWindow(object):
         self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_9.setObjectName("frame_9")
         self.frame_4 = QtWidgets.QFrame(self.home)
-        self.frame_4.setGeometry(QtCore.QRect(600, 330, 211, 81))
+        self.frame_4.setGeometry(QtCore.QRect(670, 400, 211, 81))
         self.frame_4.setStyleSheet("border: 0.4px solid rgb(255, 255, 255);\n"
 "background-image: url(:/images/images/images/5172658.png);\n"
 "border-radius: 20px;")
@@ -1099,20 +1065,50 @@ class Ui_MainWindow(object):
         self.frame_4.setObjectName("frame_4")
         self.pushButton_5 = QtWidgets.QPushButton(self.frame_4)
         self.pushButton_5.setGeometry(QtCore.QRect(10, 10, 61, 61))
+        self.pushButton_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_5.setStyleSheet("image: url(:/images/images/images/BQL.png);\n"
 "border: 3px solid rgb(255, 255, 255);\n"
 "border-radius: 29px;")
         self.pushButton_5.setText("")
         self.pushButton_5.setObjectName("pushButton_5")
         self.frame_5 = QtWidgets.QFrame(self.home)
-        self.frame_5.setGeometry(QtCore.QRect(30, 30, 541, 281))
+        self.frame_5.setGeometry(QtCore.QRect(30, 20, 591, 371))
         self.frame_5.setStyleSheet("border-radius: 20px;\n"
+"border: 2px solid rgb(255, 255, 255);\n"
 "background-image: url(:/images/images/images/2489157.png);")
         self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
+        self.current_weather_icon = QtWidgets.QLabel(self.frame_5)
+        self.current_weather_icon.setGeometry(QtCore.QRect(420, 20, 100, 100))
+        self.current_weather_icon.setMinimumSize(QtCore.QSize(100, 100))
+        self.current_weather_icon.setMaximumSize(QtCore.QSize(100, 100))
+        self.current_weather_icon.setStyleSheet("border: none;\n"
+"background: none;\n"
+"image: url(:/images/images/images/11n.png);")
+        self.current_weather_icon.setText("")
+        self.current_weather_icon.setPixmap(QtGui.QPixmap(":/weather/icons/weather/png/027-location.png"))
+        self.current_weather_icon.setScaledContents(True)
+        self.current_weather_icon.setAlignment(QtCore.Qt.AlignCenter)
+        self.current_weather_icon.setObjectName("current_weather_icon")
+        self.Time = QtWidgets.QLabel(self.frame_5)
+        self.Time.setGeometry(QtCore.QRect(30, 10, 301, 111))
+        self.Time.setObjectName("Time")
+        self.Day = QtWidgets.QLabel(self.frame_5)
+        self.Day.setGeometry(QtCore.QRect(30, 140, 301, 71))
+        self.Day.setObjectName("Day")
+        self.temperature = QtWidgets.QLabel(self.frame_5)
+        self.temperature.setGeometry(QtCore.QRect(360, 140, 201, 71))
+        self.temperature.setText("")
+        self.temperature.setObjectName("temperature")
+        self.label_4 = QtWidgets.QLabel(self.frame_5)
+        self.label_4.setGeometry(QtCore.QRect(30, 230, 531, 61))
+        self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(self.frame_5)
+        self.label_5.setGeometry(QtCore.QRect(30, 300, 531, 61))
+        self.label_5.setObjectName("label_5")
         self.frame_14 = QtWidgets.QFrame(self.home)
-        self.frame_14.setGeometry(QtCore.QRect(30, 350, 61, 61))
+        self.frame_14.setGeometry(QtCore.QRect(40, 420, 61, 61))
         self.frame_14.setStyleSheet("background-image: url(:/images/images/images/mic.png);\n"
 "border: 3px solid rgb(255, 255, 255);\n"
 "border-radius: 30px;")
@@ -1120,7 +1116,7 @@ class Ui_MainWindow(object):
         self.frame_14.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_14.setObjectName("frame_14")
         self.frame_6 = QtWidgets.QFrame(self.home)
-        self.frame_6.setGeometry(QtCore.QRect(120, 350, 451, 61))
+        self.frame_6.setGeometry(QtCore.QRect(120, 420, 501, 61))
         self.frame_6.setStyleSheet("border: 0.4px solid rgb(255, 255, 255);\n"
 "background-image: url(:/images/images/images/5172658.png);\n"
 "border-radius: 20px;")
@@ -1255,7 +1251,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 222, 222))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 278, 222))
         self.scrollAreaWidgetContents.setStyleSheet(" QScrollBar:vertical {\n"
 "    border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1565,6 +1561,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.addWidget(self.contentSettings)
         self.horizontalLayout_4.addWidget(self.extraRightBox)
         self.verticalLayout_6.addWidget(self.content)
+        self.verticalLayout_2.addWidget(self.contentBottom)
         self.bottomBar = QtWidgets.QFrame(self.contentBottom)
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.bottomBar)
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
@@ -1583,6 +1580,10 @@ class Ui_MainWindow(object):
         self.appMargins.addWidget(self.bgApp)
         MainWindow.setCentralWidget(self.styleSheet)
 
+        self.appLayout.addWidget(self.contentBox)
+        self.appMargins.addWidget(self.bgApp)
+        MainWindow.setCentralWidget(self.styleSheet)
+
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -1597,8 +1598,6 @@ class Ui_MainWindow(object):
         self.btn_widgets.setText(_translate("MainWindow", "Widgets"))
         self.btn_new.setText(_translate("MainWindow", "New"))
         self.btn_save.setText(_translate("MainWindow", "Save"))
-        '''self.btn_exit.setText(_translate("MainWindow", "Exit"))
-        self.toggleLeftBox.setText(_translate("MainWindow", "Left Box"))
         self.extraLabel.setText(_translate("MainWindow", "Left Box"))
         self.extraCloseColumnBtn.setToolTip(_translate("MainWindow", "Close left box"))
         self.btn_share.setText(_translate("MainWindow", "Share"))
@@ -1615,9 +1614,13 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert UI</span></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-uic main.ui &gt; ui_main.py</span></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert QRC</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p></body></html>"))'''
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p></body></html>"))
         self.titleRightInfo.setText(_translate("MainWindow", "XỬ LÝ TÌNH HUỐNG KHẨN CẤP"))
         self.settingsTopBtn.setToolTip(_translate("MainWindow", "Settings"))
+        self.Time.setText(_translate("MainWindow", "Time"))
+        self.Day.setText(_translate("MainWindow", "Day"))
+        self.label_4.setText(_translate("MainWindow", "TextLabel"))
+        self.label_5.setText(_translate("MainWindow", "TextLabel"))
         self.labelBoxBlenderInstalation.setText(_translate("MainWindow", "FILE BOX"))
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "Type here"))
         self.pushButton.setText(_translate("MainWindow", "Open"))
