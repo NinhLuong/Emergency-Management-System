@@ -1971,7 +1971,7 @@ border-radius: 29px;</string>
                        </property>
                        <property name="styleSheet">
                         <string notr="true">border-radius: 20px;
-border: 2px solid rgb(255, 255, 255);
+border: 4px solid rgb(255, 255, 255);
 background-image: url(:/images/images/images/2489157.png);</string>
                        </property>
                        <property name="frameShape">
@@ -1983,7 +1983,7 @@ background-image: url(:/images/images/images/2489157.png);</string>
                        <widget class="QLabel" name="current_weather_icon">
                         <property name="geometry">
                          <rect>
-                          <x>420</x>
+                          <x>410</x>
                           <y>20</y>
                           <width>100</width>
                           <height>100</height>
@@ -2023,13 +2023,26 @@ image: url(:/images/images/images/11n.png);</string>
                         <property name="geometry">
                          <rect>
                           <x>30</x>
-                          <y>10</y>
+                          <y>20</y>
                           <width>301</width>
-                          <height>111</height>
+                          <height>101</height>
                          </rect>
                         </property>
+                        <property name="font">
+                         <font>
+                          <family>Segoe UI</family>
+                          <pointsize>10</pointsize>
+                          <weight>50</weight>
+                          <italic>false</italic>
+                          <bold>false</bold>
+                         </font>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: 0px solid;
+background-image: url(:/images/images/images/nen.png);</string>
+                        </property>
                         <property name="text">
-                         <string>Time</string>
+                         <string>7:10</string>
                         </property>
                        </widget>
                        <widget class="QLabel" name="Day">
@@ -2038,8 +2051,12 @@ image: url(:/images/images/images/11n.png);</string>
                           <x>30</x>
                           <y>140</y>
                           <width>301</width>
-                          <height>71</height>
+                          <height>61</height>
                          </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: 0px solid;
+background-image: url(:/images/images/images/nen.png);</string>
                         </property>
                         <property name="text">
                          <string>Day</string>
@@ -2051,8 +2068,12 @@ image: url(:/images/images/images/11n.png);</string>
                           <x>360</x>
                           <y>140</y>
                           <width>201</width>
-                          <height>71</height>
+                          <height>61</height>
                          </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: 0px solid;
+background-image: url(:/images/images/images/nen.png);</string>
                         </property>
                         <property name="text">
                          <string/>
@@ -2064,8 +2085,11 @@ image: url(:/images/images/images/11n.png);</string>
                           <x>30</x>
                           <y>230</y>
                           <width>531</width>
-                          <height>61</height>
+                          <height>51</height>
                          </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-image: url(:/images/images/images/nen.png);</string>
                         </property>
                         <property name="text">
                          <string>TextLabel</string>
@@ -2077,8 +2101,11 @@ image: url(:/images/images/images/11n.png);</string>
                           <x>30</x>
                           <y>300</y>
                           <width>531</width>
-                          <height>61</height>
+                          <height>51</height>
                          </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-image: url(:/images/images/images/nen.png);</string>
                         </property>
                         <property name="text">
                          <string>TextLabel</string>
@@ -2088,7 +2115,7 @@ image: url(:/images/images/images/11n.png);</string>
                       <widget class="QFrame" name="frame_14">
                        <property name="geometry">
                         <rect>
-                         <x>40</x>
+                         <x>30</x>
                          <y>420</y>
                          <width>61</width>
                          <height>61</height>
@@ -2425,8 +2452,8 @@ border-radius: 20px;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>278</width>
-                                 <height>222</height>
+                                 <width>218</width>
+                                 <height>218</height>
                                 </rect>
                                </property>
                                <property name="styleSheet">
@@ -2646,6 +2673,15 @@ border-radius: 20px;</string>
                                  </color>
                                 </brush>
                                </colorrole>
+                               <colorrole role="PlaceholderText">
+                                <brush brushstyle="NoBrush">
+                                 <color alpha="128">
+                                  <red>221</red>
+                                  <green>221</green>
+                                  <blue>221</blue>
+                                 </color>
+                                </brush>
+                               </colorrole>
                               </active>
                               <inactive>
                                <colorrole role="WindowText">
@@ -2702,6 +2738,15 @@ border-radius: 20px;</string>
                                  </color>
                                 </brush>
                                </colorrole>
+                               <colorrole role="PlaceholderText">
+                                <brush brushstyle="NoBrush">
+                                 <color alpha="128">
+                                  <red>221</red>
+                                  <green>221</green>
+                                  <blue>221</blue>
+                                 </color>
+                                </brush>
+                               </colorrole>
                               </inactive>
                               <disabled>
                                <colorrole role="WindowText">
@@ -2755,6 +2800,15 @@ border-radius: 20px;</string>
                                   <red>0</red>
                                   <green>0</green>
                                   <blue>0</blue>
+                                 </color>
+                                </brush>
+                               </colorrole>
+                               <colorrole role="PlaceholderText">
+                                <brush brushstyle="NoBrush">
+                                 <color alpha="128">
+                                  <red>221</red>
+                                  <green>221</green>
+                                  <blue>221</blue>
                                  </color>
                                 </brush>
                                </colorrole>

@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/images/nen2.png</file>
+    <file>images/images/nen.png</file>
     <file>images/images/11n.png</file>
     <file>images/images/canhsat.png</file>
     <file>images/images/bg3.png</file>
