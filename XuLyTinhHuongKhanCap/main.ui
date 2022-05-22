@@ -1959,6 +1959,7 @@ border-radius: 29px;</string>
                        </property>
                        <property name="styleSheet">
                         <string notr="true">border-radius: 20px;
+border: 2px solid rgb(255, 255, 255);
 background-image: url(:/images/images/images/2489157.png);</string>
                        </property>
                        <property name="frameShape">
@@ -1967,6 +1968,45 @@ background-image: url(:/images/images/images/2489157.png);</string>
                        <property name="frameShadow">
                         <enum>QFrame::Raised</enum>
                        </property>
+                       <widget class="QLabel" name="current_weather_icon">
+                        <property name="geometry">
+                         <rect>
+                          <x>390</x>
+                          <y>20</y>
+                          <width>100</width>
+                          <height>100</height>
+                         </rect>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>100</width>
+                          <height>100</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>100</width>
+                          <height>100</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: none;
+background: none;
+image: url(:/images/images/images/11n.png);</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap>:/weather/icons/weather/png/027-location.png</pixmap>
+                        </property>
+                        <property name="scaledContents">
+                         <bool>true</bool>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
                       </widget>
                       <widget class="QFrame" name="frame_14">
                        <property name="geometry">
