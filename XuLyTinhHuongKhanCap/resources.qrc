@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/images/timeline.png</file>
     <file>images/images/hotro.png</file>
     <file>images/images/do_c.png</file>
     <file>images/images/temperature.png</file>

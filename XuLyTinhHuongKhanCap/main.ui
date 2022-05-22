@@ -1742,7 +1742,7 @@ background-repeat: no-repeat;</string>
                        <property name="geometry">
                         <rect>
                          <x>670</x>
-                         <y>20</y>
+                         <y>10</y>
                          <width>211</width>
                          <height>81</height>
                         </rect>
@@ -1803,7 +1803,7 @@ border-radius: 29px;</string>
                        <property name="geometry">
                         <rect>
                          <x>670</x>
-                         <y>150</y>
+                         <y>140</y>
                          <width>211</width>
                          <height>81</height>
                         </rect>
@@ -1864,7 +1864,7 @@ border-radius: 29px;</string>
                        <property name="geometry">
                         <rect>
                          <x>670</x>
-                         <y>280</y>
+                         <y>270</y>
                          <width>211</width>
                          <height>81</height>
                         </rect>
@@ -2073,32 +2073,20 @@ font: 72pt &quot;Stencil&quot;;</string>
                         <property name="geometry">
                          <rect>
                           <x>30</x>
-                          <y>230</y>
+                          <y>250</y>
                           <width>531</width>
-                          <height>51</height>
+                          <height>21</height>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">background-image: url(:/images/images/images/nen.png);</string>
+                         <string notr="true">border: 2px solid rgb(255, 255, 255);
+background-image: url(:/images/images/images/timeline.png);
+border-radius: 9px;
+
+</string>
                         </property>
                         <property name="text">
-                         <string>TextLabel</string>
-                        </property>
-                       </widget>
-                       <widget class="QLabel" name="label_5">
-                        <property name="geometry">
-                         <rect>
-                          <x>30</x>
-                          <y>300</y>
-                          <width>531</width>
-                          <height>51</height>
-                         </rect>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">background-image: url(:/images/images/images/nen.png);</string>
-                        </property>
-                        <property name="text">
-                         <string>TextLabel</string>
+                         <string/>
                         </property>
                        </widget>
                        <widget class="QLabel" name="temperature_2">
@@ -2212,8 +2200,192 @@ border-image: url(:/images/images/images/do_c.png);</string>
                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
                        </widget>
+                       <widget class="QLabel" name="label_5">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>320</y>
+                          <width>531</width>
+                          <height>21</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: 2px solid rgb(255, 255, 255);
+background-image: url(:/images/images/images/timeline.png);
+border-radius: 9px;
+
+</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_8">
+                        <property name="geometry">
+                         <rect>
+                          <x>190</x>
+                          <y>320</y>
+                          <width>21</width>
+                          <height>21</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border-radius: 10px;
+</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_9">
+                        <property name="geometry">
+                         <rect>
+                          <x>140</x>
+                          <y>250</y>
+                          <width>21</width>
+                          <height>21</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border-radius: 10px;
+</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="temperature_6">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>220</y>
+                          <width>141</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: 0px solid;
+background-image: url(:/images/images/images/nentrongsuot.png);</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ffffff;&quot;&gt;PM2.5&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="temperature_7">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>290</y>
+                          <width>141</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: 0px solid;
+background-image: url(:/images/images/images/nentrongsuot.png);</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ffffff;&quot;&gt;AQI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
                       </widget>
-                      <widget class="QFrame" name="frame_14">
+                      <widget class="QFrame" name="frame_13">
+                       <property name="geometry">
+                        <rect>
+                         <x>100</x>
+                         <y>420</y>
+                         <width>521</width>
+                         <height>61</height>
+                        </rect>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border-radius: 20px;
+background-image: url(:/images/images/images/nen2.png);
+</string>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <widget class="QFrame" name="frame_6">
+                        <property name="geometry">
+                         <rect>
+                          <x>250</x>
+                          <y>10</y>
+                          <width>241</width>
+                          <height>41</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: 3px solid rgb(255, 255, 255);
+border-radius: 20px;
+background: none;</string>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <widget class="QLabel" name="label_2">
+                         <property name="geometry">
+                          <rect>
+                           <x>50</x>
+                           <y>0</y>
+                           <width>171</width>
+                           <height>41</height>
+                          </rect>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+background-image: url(:/images/images/images/nentrongsuot.png);
+font: 75 10pt &quot;#9Slide03 Cabin Bold&quot;;</string>
+                         </property>
+                         <property name="text">
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;AN TOÀN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         </property>
+                        </widget>
+                        <widget class="QLabel" name="label_6">
+                         <property name="geometry">
+                          <rect>
+                           <x>0</x>
+                           <y>0</y>
+                           <width>41</width>
+                           <height>41</height>
+                          </rect>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(0, 255, 0);
+border: 3px solid rgb(255, 255, 255);
+border-radius: 20px;</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </widget>
+                       <widget class="QLabel" name="label_3">
+                        <property name="geometry">
+                         <rect>
+                          <x>30</x>
+                          <y>0</y>
+                          <width>211</width>
+                          <height>61</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border:none;
+border-radius: 20px;
+font: 75 10pt &quot;#9Slide03 Cabin Bold&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ffffff;&quot;&gt;TRẠNG THÁI AN NINH :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                      </widget>
+                      <widget class="QPushButton" name="pushButton_6">
                        <property name="geometry">
                         <rect>
                          <x>30</x>
@@ -2222,92 +2394,17 @@ border-image: url(:/images/images/images/do_c.png);</string>
                          <height>61</height>
                         </rect>
                        </property>
+                       <property name="cursor">
+                        <cursorShape>PointingHandCursor</cursorShape>
+                       </property>
                        <property name="styleSheet">
                         <string notr="true">background-image: url(:/images/images/images/mic.png);
 border: 3px solid rgb(255, 255, 255);
 border-radius: 30px;</string>
                        </property>
-                       <property name="frameShape">
-                        <enum>QFrame::StyledPanel</enum>
-                       </property>
-                       <property name="frameShadow">
-                        <enum>QFrame::Raised</enum>
-                       </property>
-                      </widget>
-                      <widget class="QLabel" name="label_3">
-                       <property name="geometry">
-                        <rect>
-                         <x>120</x>
-                         <y>420</y>
-                         <width>211</width>
-                         <height>61</height>
-                        </rect>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">border:none;
-border-radius: 20px;
-font: 75 10pt &quot;#9Slide03 Cabin Bold&quot;;</string>
-                       </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ffffff;&quot;&gt;TRẠNG THÁI AN NINH :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string/>
                        </property>
-                      </widget>
-                      <widget class="QFrame" name="frame_6">
-                       <property name="geometry">
-                        <rect>
-                         <x>340</x>
-                         <y>430</y>
-                         <width>241</width>
-                         <height>41</height>
-                        </rect>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">border: 3px solid rgb(255, 255, 255);
-border-radius: 20px;
-background: none;</string>
-                       </property>
-                       <property name="frameShape">
-                        <enum>QFrame::StyledPanel</enum>
-                       </property>
-                       <property name="frameShadow">
-                        <enum>QFrame::Raised</enum>
-                       </property>
-                       <widget class="QLabel" name="label_2">
-                        <property name="geometry">
-                         <rect>
-                          <x>50</x>
-                          <y>0</y>
-                          <width>171</width>
-                          <height>41</height>
-                         </rect>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">border: none;
-background-image: url(:/images/images/images/nentrongsuot.png);
-font: 75 10pt &quot;#9Slide03 Cabin Bold&quot;;</string>
-                        </property>
-                        <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;AN TOÀN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                        </property>
-                       </widget>
-                       <widget class="QLabel" name="label_6">
-                        <property name="geometry">
-                         <rect>
-                          <x>0</x>
-                          <y>0</y>
-                          <width>41</width>
-                          <height>41</height>
-                         </rect>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">background-color: rgb(0, 255, 0);
-border: 3px solid rgb(255, 255, 255);
-border-radius: 20px;</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </widget>
                       </widget>
                      </widget>
                      <widget class="QWidget" name="widgets">
