@@ -1,0 +1,1 @@
+#widgets.titleRightInfo.setText(description)

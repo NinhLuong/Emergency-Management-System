@@ -31,10 +31,10 @@ class MainWindow(QMainWindow):
         # APP NAME
         # ///////////////////////////////////////////////////////////////
         title = "Python Project "
-        description = "XỬ LÝ TÌNH HUỐNG KHẨN CẤP"
+        #description = "XỬ LÝ TÌNH HUỐNG KHẨN CẤP"
         # APPLY TEXTS
         self.setWindowTitle(title)
-        widgets.titleRightInfo.setText(description)
+        #widgets.titleRightInfo.setText(description)
 
         # TOGGLE MENU
         # ///////////////////////////////////////////////////////////////
