@@ -24,8 +24,16 @@ class Ui_MainWindow(object):
             # Set date
     def setDate(self):
         Date= QtCore.QDate.currentDate()
-        text= Date.toString("dd/MM/yyyy")
-        self.temperature_2.setText(text)
+        text0= Date.toString("dd/MM/yyyy")
+        text1=Date.toString("dddd")
+        self.temperature_2.setText(text0)
+        self.temperature_3.setText(text1)
+
+    def setDay(self):
+        Date= QtCore.QDate.currentDate()
+        text1=Date.toString("dddd")
+        self.temperature_3.setText(text1)
+
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -1136,7 +1144,7 @@ class Ui_MainWindow(object):
 "")
         timer= QtCore.QTimer(MainWindow)
         timer.timeout.connect(self.setTime)
-        timer.start(1000)
+        timer.start(100)
         self.label_4.setText("")
         self.label_4.setObjectName("label_4")
         self.temperature_2 = QtWidgets.QLabel(self.frame_5)
@@ -1144,14 +1152,17 @@ class Ui_MainWindow(object):
         self.temperature_2.setStyleSheet("border: 0px solid;\n"
 "background-image: url(:/images/images/images/nentrongsuot.png);")
         self.temperature_2.setObjectName("temperature_2")
-        dy= QtCore.QTimer(MainWindow)
-        dy.timeout.connect(self.setDate)
-        dy.start(1000)
         self.temperature_3 = QtWidgets.QLabel(self.frame_5)
         self.temperature_3.setGeometry(QtCore.QRect(120, 160, 141, 31))
         self.temperature_3.setStyleSheet("border: 0px solid;\n"
 "background-image: url(:/images/images/images/nentrongsuot.png);")
         self.temperature_3.setObjectName("temperature_3")
+        dy= QtCore.QTimer(MainWindow)
+        dy.timeout.connect(self.setDate)
+        dy.start(100)
+        dy1= QtCore.QTimer(MainWindow)
+        dy1.timeout.connect(self.setDay)
+        dy1.start(100)
         self.frame_10 = QtWidgets.QFrame(self.frame_5)
         self.frame_10.setGeometry(QtCore.QRect(60, 140, 41, 41))
         self.frame_10.setStyleSheet("border: 0px solid;\n"
@@ -1726,11 +1737,11 @@ class Ui_MainWindow(object):
         self.btn_widgets.setText(_translate("MainWindow", "Widgets"))
         self.btn_new.setText(_translate("MainWindow", "New"))
         self.btn_save.setText(_translate("MainWindow", "Save"))
-        self.titleRightInfo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; color:#ffffff;\">XỬ LÝ TÌNH HUỐNG KHẨN CẤP</span></p></body></html>"))
+        self.titleRightInfo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15pt; color:#ffffff;\">XỬ LÝ TÌNH HUỐNG KHẨN CẤP</span></p></body></html>"))
         self.settingsTopBtn.setToolTip(_translate("MainWindow", "Settings"))
         self.Time.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">7:10</span></p></body></html>"))
-        self.temperature_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:700; color:#ffffff;\">21/08/2002</span></p></body></html>"))
-        self.temperature_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">Tuesday</span></p></body></html>"))
+        self.temperature_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:800; color:#ffffff;\">21/08/2002</span></p></body></html>"))
+        self.temperature_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700; color:#ffffff;\">Tuesday</span></p></body></html>"))
         self.temperature_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">25</span></p></body></html>"))
         self.temperature_5.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
         self.temperature_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">PM2.5</span></p></body></html>"))
