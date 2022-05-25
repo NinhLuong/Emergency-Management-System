@@ -13,6 +13,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from . resources_rc import *
 from PyQt5 import QtCore, QtGui, QtWidgets
+import requests
 class Ui_MainWindow(object):
         
         # Set time
@@ -25,15 +26,23 @@ class Ui_MainWindow(object):
     def setDate(self):
         Date= QtCore.QDate.currentDate()
         text0= Date.toString("dd/MM/yyyy")
-        text1=Date.toString("dddd")
         self.temperature_2.setText(text0)
-        self.temperature_3.setText(text1)
 
     def setDay(self):
         Date= QtCore.QDate.currentDate()
         text1=Date.toString("dddd")
         self.temperature_3.setText(text1)
 
+    def current_weather(self):
+        ow_url = "http://api.openweathermap.org/data/2.5/weather?"
+        city = "Thanh pho Ho Chi Minh"
+        api_key = "fe8d8c65cf345889139d8e545f57819a"
+        call_url = ow_url + "appid=" + api_key + "&q=" + city + "&units=metric"
+        response = requests.get(call_url)
+        data = response.json()
+        city_res = data["main"]
+        current_temperature = city_res["temp"]
+        self.temperature_4.setText(str(current_temperature))
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -1183,7 +1192,10 @@ class Ui_MainWindow(object):
         self.temperature_4.setGeometry(QtCore.QRect(450, 140, 41, 41))
         self.temperature_4.setStyleSheet("border: 0px solid;\n"
 "background-image: url(:/images/images/images/nentrongsuot.png);")
-        self.temperature_4.setObjectName("temperature_4")
+        self.temperature_4.setObjectName("temperature_4")    
+        tem= QtCore.QTimer(MainWindow)
+        tem.timeout.connect(self.current_weather)
+        tem.start(100)
         self.temperature_5 = QtWidgets.QLabel(self.frame_5)
         self.temperature_5.setGeometry(QtCore.QRect(470, 140, 61, 51))
         self.temperature_5.setStyleSheet("border: 0px solid;\n"

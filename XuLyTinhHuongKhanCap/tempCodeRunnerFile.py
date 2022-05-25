@@ -1,1 +1,1 @@
-#widgets.titleRightInfo.setText(description)
+import requests
