@@ -22,28 +22,6 @@ class Ui_MainWindow(object):
         text= time.toString("HH:mm")
         self.Time.setText(text)
 
-            # Set date
-    def setDate(self):
-        Date= QtCore.QDate.currentDate()
-        text0= Date.toString("dd/MM/yyyy")
-        self.temperature_2.setText(text0)
-
-    def setDay(self):
-        Date= QtCore.QDate.currentDate()
-        text1=Date.toString("dddd")
-        self.temperature_3.setText(text1)
-
-    def current_weather(self):
-        ow_url = "http://api.openweathermap.org/data/2.5/weather?"
-        city = "Thanh pho Ho Chi Minh"
-        api_key = "fe8d8c65cf345889139d8e545f57819a"
-        call_url = ow_url + "appid=" + api_key + "&q=" + city + "&units=metric"
-        response = requests.get(call_url)
-        data = response.json()
-        city_res = data["main"]
-        current_temperature = city_res["temp"]
-        self.temperature_4.setText(str(current_temperature))
-
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1020, 596)
@@ -58,10 +36,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.styleSheet.setFont(font)
         self.styleSheet.setStyleSheet("/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
-"\n"
-"SET APP STYLESHEET - FULL STYLES HERE\n"
-"DARK THEME - DRACULA COLOR BASED\n"
-"\n"
+
 "///////////////////////////////////////////////////////////////////////////////////////////////// */\n"
 "\n"
 "QWidget{\n"
@@ -1165,13 +1140,13 @@ class Ui_MainWindow(object):
         self.temperature_3.setGeometry(QtCore.QRect(120, 160, 141, 31))
         self.temperature_3.setStyleSheet("border: 0px solid;\n"
 "background-image: url(:/images/images/images/nentrongsuot.png);")
-        self.temperature_3.setObjectName("temperature_3")
+        '''self.temperature_3.setObjectName("temperature_3")
         dy= QtCore.QTimer(MainWindow)
         dy.timeout.connect(self.setDate)
-        dy.start(100)
+        dy.start(1)
         dy1= QtCore.QTimer(MainWindow)
         dy1.timeout.connect(self.setDay)
-        dy1.start(100)
+        dy1.start(1)'''
         self.frame_10 = QtWidgets.QFrame(self.frame_5)
         self.frame_10.setGeometry(QtCore.QRect(60, 140, 41, 41))
         self.frame_10.setStyleSheet("border: 0px solid;\n"
@@ -1193,9 +1168,6 @@ class Ui_MainWindow(object):
         self.temperature_4.setStyleSheet("border: 0px solid;\n"
 "background-image: url(:/images/images/images/nentrongsuot.png);")
         self.temperature_4.setObjectName("temperature_4")    
-        tem= QtCore.QTimer(MainWindow)
-        tem.timeout.connect(self.current_weather)
-        tem.start(100)
         self.temperature_5 = QtWidgets.QLabel(self.frame_5)
         self.temperature_5.setGeometry(QtCore.QRect(470, 140, 61, 51))
         self.temperature_5.setStyleSheet("border: 0px solid;\n"
@@ -1749,12 +1721,33 @@ class Ui_MainWindow(object):
         self.btn_widgets.setText(_translate("MainWindow", "Widgets"))
         self.btn_new.setText(_translate("MainWindow", "New"))
         self.btn_save.setText(_translate("MainWindow", "Save"))
-        self.titleRightInfo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:15pt; color:#ffffff;\">XỬ LÝ TÌNH HUỐNG KHẨN CẤP</span></p></body></html>"))
+        self.titleRightInfo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">XỬ LÝ TÌNH HUỐNG KHẨN CẤP</span></p></body></html>"))
         self.settingsTopBtn.setToolTip(_translate("MainWindow", "Settings"))
         self.Time.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">7:10</span></p></body></html>"))
         self.temperature_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:800; color:#ffffff;\">21/08/2002</span></p></body></html>"))
+        tem2="<html><head/><body><p><span style=\" font-size:14pt; font-weight:800; color:#ffffff;\">{VALUE}</span></p></body></html>"
+        Date= QtCore.QDate.currentDate()
+        text0= Date.toString("dd/MM/yyyy")
+        new_date= tem2.replace("{VALUE}",text0)
+        self.temperature_2.setText(new_date)
         self.temperature_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700; color:#ffffff;\">Tuesday</span></p></body></html>"))
+        tem3= "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700; color:#ffffff;\">{VALUE}</span></p></body></html>"
+        Date= QtCore.QDate.currentDate()
+        text1=Date.toString("dddd")
+        new_day= tem2.replace("{VALUE}",text1)
+        self.temperature_3.setText(new_day)
         self.temperature_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">25</span></p></body></html>"))
+        tem4="<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">{VALUE}</span></p></body></html>"
+        ow_url = "http://api.openweathermap.org/data/2.5/weather?"
+        city = "Thanh pho Ho Chi Minh"
+        api_key = "fe8d8c65cf345889139d8e545f57819a"
+        call_url = ow_url + "appid=" + api_key + "&q=" + city + "&units=metric"
+        response = requests.get(call_url)
+        data = response.json()
+        city_res = data["main"]
+        current_temperature = city_res["temp"]
+        new_tem= tem4.replace("{VALUE}",str(int(current_temperature)))
+        self.temperature_4.setText(new_tem)
         self.temperature_5.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
         self.temperature_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">PM2.5</span></p></body></html>"))
         self.temperature_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">AQI</span></p></body></html>"))
