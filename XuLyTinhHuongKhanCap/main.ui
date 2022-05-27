@@ -917,7 +917,7 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-gamepad.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-settings.png);</string>
                   </property>
                   <property name="text">
                    <string>Widgets</string>
@@ -1600,7 +1600,7 @@ p, li { white-space: pre-wrap; }
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/images/icons/icon_settings.png</normaloff>:/icons/images/icons/icon_settings.png</iconset>
+                    <normaloff>:/icons/images/icons/cil-user-follow.png</normaloff>:/icons/images/icons/cil-user-follow.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -1730,7 +1730,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -2441,44 +2441,16 @@ border-radius: 30px;</string>
                         <number>10</number>
                        </property>
                        <item>
-                        <widget class="QFrame" name="row_3">
-                         <property name="minimumSize">
+                        <widget class="QLabel" name="label_7">
+                         <property name="maximumSize">
                           <size>
-                           <width>0</width>
-                           <height>150</height>
+                           <width>50</width>
+                           <height>50</height>
                           </size>
                          </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                         <property name="text">
+                          <string>TextLabel</string>
                          </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_12">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
-                          <item>
-                           <widget class="QLineEdit" name="lineEdit">
-                            <property name="styleSheet">
-                             <string notr="true">border: 0.4px solid rgb(255, 255, 255);
-border-radius: 20px;</string>
-                            </property>
-                           </widget>
-                          </item>
-                         </layout>
                         </widget>
                        </item>
                       </layout>
