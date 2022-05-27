@@ -31,3 +31,13 @@ def weather(self):
             icon.addPixmap(QtGui.QPixmap(":/Weather/animated/thunder.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.pushButton_3.setIcon(icon)
             self.label_text_weather.setText(new_text)
+
+
+    self.pushButton_3 = QtWidgets.QPushButton(self.frame_2)
+        self.pushButton_3.setGeometry(QtCore.QRect(10, 10, 61, 61))
+        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_3.setStyleSheet("image: url(:/images/images/images/114.png);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 29px;")
+        self.pushButton_3.setText("")
+        self.pushButton_3.setObjectName("pushButton_3")

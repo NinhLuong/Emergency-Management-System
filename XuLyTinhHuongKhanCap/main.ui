@@ -2002,45 +2002,6 @@ background-image: url(:/images/images/images/2489157.png);</string>
                        <property name="frameShadow">
                         <enum>QFrame::Raised</enum>
                        </property>
-                       <widget class="QLabel" name="current_weather_icon">
-                        <property name="geometry">
-                         <rect>
-                          <x>410</x>
-                          <y>20</y>
-                          <width>100</width>
-                          <height>100</height>
-                         </rect>
-                        </property>
-                        <property name="minimumSize">
-                         <size>
-                          <width>100</width>
-                          <height>100</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>100</width>
-                          <height>100</height>
-                         </size>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">border: none;
-background: none;
-image: url(:/images/images/images/11n.png);</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                        <property name="pixmap">
-                         <pixmap>:/weather/icons/weather/png/027-location.png</pixmap>
-                        </property>
-                        <property name="scaledContents">
-                         <bool>true</bool>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignCenter</set>
-                        </property>
-                       </widget>
                        <widget class="QLabel" name="Time">
                         <property name="geometry">
                          <rect>
@@ -2320,6 +2281,24 @@ background-image: url(:/images/images/images/nentrongsuot.png);</string>
                         </property>
                         <property name="text">
                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ffffff;&quot;&gt;Excellence&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                       </widget>
+                       <widget class="QPushButton" name="pushButton_7">
+                        <property name="geometry">
+                         <rect>
+                          <x>390</x>
+                          <y>10</y>
+                          <width>151</width>
+                          <height>111</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: none;
+background: none;
+image: url(:/images/images/images/sum.png);</string>
+                        </property>
+                        <property name="text">
+                         <string/>
                         </property>
                        </widget>
                       </widget>
@@ -2738,7 +2717,7 @@ border-radius: 30px;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>222</width>
+                                 <width>278</width>
                                  <height>222</height>
                                 </rect>
                                </property>

@@ -1093,17 +1093,14 @@ class Ui_MainWindow(object):
         self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
-        self.current_weather_icon = QtWidgets.QLabel(self.frame_5)
+        self.current_weather_icon = QtWidgets.QPushButton(self.frame_5)
         self.current_weather_icon.setGeometry(QtCore.QRect(410, 20, 100, 100))
         self.current_weather_icon.setMinimumSize(QtCore.QSize(100, 100))
         self.current_weather_icon.setMaximumSize(QtCore.QSize(100, 100))
         self.current_weather_icon.setStyleSheet("border: none;\n"
 "background: none;\n"
-"image: url(:/images/images/images/11n.png);")
+"image: url(:/images/images/images/sum.png);")
         self.current_weather_icon.setText("")
-        self.current_weather_icon.setPixmap(QtGui.QPixmap(":/weather/icons/weather/png/027-location.png"))
-        self.current_weather_icon.setScaledContents(True)
-        self.current_weather_icon.setAlignment(QtCore.Qt.AlignCenter)
         self.current_weather_icon.setObjectName("current_weather_icon")
         self.Time = QtWidgets.QLabel(self.frame_5)
         self.Time.setGeometry(QtCore.QRect(30, 10, 301, 111))
@@ -1738,15 +1735,22 @@ class Ui_MainWindow(object):
         self.temperature_3.setText(new_day)
         self.temperature_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">25</span></p></body></html>"))
         tem4="<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">{VALUE}</span></p></body></html>"
-        ow_url = "http://api.openweathermap.org/data/2.5/weather?"
-        city = "Thanh pho Ho Chi Minh"
-        api_key = "fe8d8c65cf345889139d8e545f57819a"
-        call_url = ow_url + "appid=" + api_key + "&q=" + city + "&units=metric"
+        call_url = 'https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
         response = requests.get(call_url)
         data = response.json()
         city_res = data["main"]
         current_temperature = city_res["temp"]
-        new_tem= tem4.replace("{VALUE}",str(int(current_temperature)))
+        new_tem= tem4.replace("{VALUE}",str(int(current_temperature-273)))
+        if data['weather'][0]['icon'] == '04d':
+            icon10 = QtGui.QIcon()
+            icon10.addPixmap(QtGui.QPixmap("images\images\sum.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.current_weather_icon.setIcon(icon10)
+
+
+        elif data['weather'][0]['main'] == 'rain':
+            icon = QtGui.QIcon()
+            icon.addPixmap(QtGui.QPixmap("images\images\rain.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.current_weather_icon.setIcon(icon)
         self.temperature_4.setText(new_tem)
         self.temperature_5.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
         self.temperature_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">PM2.5</span></p></body></html>"))
