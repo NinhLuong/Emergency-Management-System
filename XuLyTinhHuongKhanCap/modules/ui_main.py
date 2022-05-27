@@ -1514,11 +1514,11 @@ class Ui_MainWindow(object):
         if data['weather'][0]['icon'] == '04d':
             icon10 = QtGui.QIcon()
             icon10.addPixmap(QtGui.QPixmap("images\images\sum.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.current_weather_icon.setIcon(icon10)
+            self.pushButton_7.setIcon(icon10)
         elif data['weather'][0]['main'] == 'rain':
             icon = QtGui.QIcon()
             icon.addPixmap(QtGui.QPixmap("images\images\rain.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.current_weather_icon.setIcon(icon)
+            self.pushButton_7.setIcon(icon)
         self.temperature_5.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
         self.temperature_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">PM2.5</span></p></body></html>"))
         self.temperature_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">AQI</span></p></body></html>"))
