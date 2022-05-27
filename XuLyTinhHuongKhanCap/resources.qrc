@@ -1,5 +1,10 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/images/Picture1.png</file>
+    <file>images/images/bongden.png</file>
+    <file>images/images/save.png</file>
+    <file>images/images/home.png</file>
+    <file>images/images/home2.png</file>
     <file>images/images/rain.png</file>
     <file>images/images/sum.png</file>
     <file>images/images/timeline.png</file>
