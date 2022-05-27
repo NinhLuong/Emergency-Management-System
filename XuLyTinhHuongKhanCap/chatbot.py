@@ -2,20 +2,11 @@ import os
 import playsound
 import speech_recognition as sr
 import time
-import wikipedia
 import datetime
 import requests
-import urllib.request as urllib2
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from webdriver_manager.chrome import ChromeDriverManager
-from time import strftime
 from gtts import gTTS
 
-
-wikipedia.set_lang('vi')
 language = 'vi'
-path = ChromeDriverManager().install()
 
 def speak(text):
     print("Bot: {}".format(text))
@@ -44,12 +35,9 @@ def get_text():
             return text.lower()
     return 0
 
-def help_me():
-    speak("""Bot có thể giúp bạn thực hiện các câu lệnh sau đây:
-    1. Hiển thị giờ
-    2. Dự báo thời tiết
-    3.Điện thoại 
-    """)
+#def called(text):
+
+
 
 def get_time(text):
     now = datetime.datetime.now()
@@ -60,18 +48,13 @@ def get_time(text):
               (now.day, now.month, now.year))
 
 def current_weather():
-    speak("Bạn muốn xem thời tiết ở đâu ạ.")
-    ow_url = "http://api.openweathermap.org/data/2.5/weather?"
-    city = get_text()
-    if not city:
-        pass
-    api_key = "fe8d8c65cf345889139d8e545f57819a"
-    call_url = ow_url + "appid=" + api_key + "&q=" + city + "&units=metric"
+    call_url = 'https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
     response = requests.get(call_url)
     data = response.json()
+    city_res = data["main"]
     if data["cod"] != "404":
         city_res = data["main"]
-        current_temperature = city_res["temp"]
+        current_temperature = city_res["temp"]-273
         current_pressure = city_res["pressure"]
         current_humidity = city_res["humidity"]
         suntime = data["sys"]
@@ -98,11 +81,7 @@ def assistant():
     while True:
         text = get_text()
 
-        if "có thể làm gì" in text:
-            help_me()
-        elif "thời tiết"  in text:
+        if "thời tiết"  in text:
             current_weather()
         elif "ngày" in text or "giờ" in text or "tháng"  in text or" phút" in text or "năm" in text: 
             get_time(text)
-
-assistant()
