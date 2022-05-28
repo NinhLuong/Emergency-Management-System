@@ -26,6 +26,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">border-radius: 20px;</string>
+  </property>
   <widget class="QWidget" name="styleSheet">
    <property name="font">
     <font>
