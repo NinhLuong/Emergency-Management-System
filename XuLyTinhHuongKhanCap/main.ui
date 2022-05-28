@@ -1521,12 +1521,15 @@ p, li { white-space: pre-wrap; }
                   <property name="toolTip">
                    <string>Settings</string>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/images/icons/icon_settings.png</normaloff>:/icons/images/icons/icon_settings.png</iconset>
+                    <normaloff>:/images/images/images/acc.png</normaloff>:/images/images/images/acc.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
