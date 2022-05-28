@@ -5,7 +5,6 @@ import time
 import datetime
 import requests
 from gtts import gTTS
-from modules.Hardware import *
 
 language = 'vi'
 
@@ -20,8 +19,7 @@ def get_audio():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Tôi: ", end='')
-        print("       ")
-        audio = r.listen(source, phrase_time_limit=7)
+        audio = r.listen(source, phrase_time_limit=5)
         try:
             text = r.recognize_google(audio, language="vi-VN")
             print(text)
@@ -37,9 +35,13 @@ def get_text():
             return text.lower()
     return 0
 
-def called():
-    speak("đang gọi")
-    Call("0824451334")
+'''def called(text):
+    CALL("082114")
+    
+    
+    '''
+
+
 
 
 def get_time(text):
@@ -88,5 +90,3 @@ def assistant():
             current_weather()
         elif "ngày" in text or "giờ" in text or "tháng"  in text or" phút" in text or "năm" in text: 
             get_time(text)  
-        elif "cháy" in text:
-            called()

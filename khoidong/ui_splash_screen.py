@@ -9,9 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from resources_wel import *
 
-
-class Ui_MainWindow(object):
+class Ui_MainWindow1(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(306, 453)
@@ -48,4 +48,4 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">W</span></p><p align=\"center\"><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">E</span></p><p align=\"center\"><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">L</span></p><p align=\"center\"><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">L</span></p><p align=\"center\"><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">C</span></p><p align=\"center\"><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">O</span></p><p align=\"center\"><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">M</span></p><p align=\"center\"><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">E</span></p></body></html>"))
-import resources_rc
+
