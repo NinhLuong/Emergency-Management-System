@@ -1,4 +1,4 @@
-Rem Rem Rem
+
 def weather(self):
         api_address='https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=59e434bde2d8ff7f30cfdb363d79aa61&lang=vi'
         json_data = requests.get(api_address).json()

@@ -9,12 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import resources_rc
 
 class Ui_SplashScreen(object):
     def setupUi(self, SplashScreen):
-        SplashScreen.setObjectName("SplashScreen")
-        SplashScreen.resize(481, 453)
+        if SplashScreen.objectName():
+            SplashScreen.setObjectName(u"SplashScreen")
+        SplashScreen.resize(483, 451)
         self.centralwidget = QtWidgets.QWidget(SplashScreen)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(self.centralwidget)
@@ -61,17 +62,30 @@ class Ui_SplashScreen(object):
         self.circulProgress.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.circulProgress.setFrameShadow(QtWidgets.QFrame.Raised)
         self.circulProgress.setObjectName("circulProgress")
-        self.label_2 = QtWidgets.QLabel(self.circulProgress)
-        self.label_2.setGeometry(QtCore.QRect(30, 100, 101, 20))
-        self.label_2.setStyleSheet("font: 8pt \"Microsoft JhengHei\";\n"
+        self.container = QtWidgets.QFrame(self.circularProgressBarBase)
+        self.container.setEnabled(True)
+        self.container.setGeometry(QtCore.QRect(30, 40, 121, 101))
+        self.container.setStyleSheet("QFrame{\n"
+"    border-radius: 130px;\n"
+"    background-color: rgb(77,77, 127);\n"
+"}")
+        self.container.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.container.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.container.setObjectName("container")
+        self.labelPercentage = QtWidgets.QLabel(self.container)
+        self.labelPercentage.setGeometry(QtCore.QRect(10, 10, 121, 41))
+        self.labelPercentage.setStyleSheet("QFrame{\n"
+"            border-radius: 150px;\n"
+"            background-color: qconicalgradient(cx:0.5, cy:0.5, angle:90, stop:{STOP_1} rgba(255, 0, 127, 0), stop:{STOP_2} rgba(85, 170, 255, 255));\n"
+"        }")
+        self.labelPercentage.setObjectName("labelPercentage")
+        self.labelLoadingInfo = QtWidgets.QLabel(self.container)
+        self.labelLoadingInfo.setGeometry(QtCore.QRect(10, 80, 101, 20))
+        self.labelLoadingInfo.setStyleSheet("font: 8pt \"Microsoft JhengHei\";\n"
 "background-color: rgb(112, 112, 167);\n"
 "border-radius: 10px;\n"
 "")
-        self.label_2.setObjectName("label_2")
-        self.label_3 = QtWidgets.QLabel(self.circulProgress)
-        self.label_3.setGeometry(QtCore.QRect(30, 40, 121, 41))
-        self.label_3.setStyleSheet("font: 8pt \"Microsoft JhengHei\";")
-        self.label_3.setObjectName("label_3")
+        self.labelLoadingInfo.setObjectName("labelLoadingInfo")
         SplashScreen.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(SplashScreen)
@@ -79,7 +93,7 @@ class Ui_SplashScreen(object):
 
     def retranslateUi(self, SplashScreen):
         _translate = QtCore.QCoreApplication.translate
-        SplashScreen.setWindowTitle(_translate("SplashScreen", "SplashScreen"))
-        self.label_2.setText(_translate("SplashScreen", "<html><head/><body><p align=\"center\"><span style=\" font-size:7pt; font-weight:600; color:#ffffff;\">loading...</span></p></body></html>"))
-        self.label_3.setText(_translate("SplashScreen", "<html><head/><body><p align=\"center\"><span style=\" font-size:20pt; font-weight:600; color:#ffffff;\">0</span><span style=\" font-size:20pt; font-weight:600; color:#ffffff; vertical-align:super;\">%</span></p></body></html>"))
-from resources_rc import *
+        SplashScreen.setWindowTitle(_translate("SplashScreen", "MainWindow"))
+        self.labelPercentage.setText(_translate("SplashScreen", "<html><head/><body><p align=\"center\"><span style=\" font-size:20pt; font-weight:600; color:#ffffff;\">0</span><span style=\" font-size:20pt; font-weight:600; color:#ffffff; vertical-align:super;\">%</span></p></body></html>"))
+        self.labelLoadingInfo.setText(_translate("SplashScreen", "<html><head/><body><p align=\"center\"><span style=\" font-size:7pt; font-weight:600; color:#ffffff;\">loading...</span></p></body></html>"))
+
