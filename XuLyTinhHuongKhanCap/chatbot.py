@@ -35,7 +35,8 @@ def get_text():
             return text.lower()
     return 0
 
-#def called(text):
+'''def called(text):
+    CALL("082114")'''
 
 
 
