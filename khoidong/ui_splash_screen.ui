@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>373</width>
+    <width>306</width>
     <height>453</height>
    </rect>
   </property>
@@ -65,8 +65,8 @@ border-bottom-right-radius: 50px;</string>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>120</y>
+        <x>30</x>
+        <y>0</y>
         <width>16</width>
         <height>271</height>
        </rect>
