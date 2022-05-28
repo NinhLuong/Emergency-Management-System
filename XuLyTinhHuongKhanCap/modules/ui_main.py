@@ -75,7 +75,6 @@ class Ui_MainWindow(object):
 "}\n"
 "#topLogo {\n"
 "    background-color: rgb(33, 37, 43);\n"
-"    background-image: url(:/images/images/images/PyDracula.png);\n"
 "    background-position: centered;\n"
 "    background-repeat: no-repeat;\n"
 "}\n"
@@ -1203,6 +1202,22 @@ class Ui_MainWindow(object):
 "image: url(:/images/images/images/sum.png);")
         self.pushButton_7.setText("")
         self.pushButton_7.setObjectName("pushButton_7")
+        call_url = 'https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
+        response = requests.get(call_url)
+        data = response.json()
+        print(data["weather"][0]["icon"])
+        if data['weather'][0]['icon'] =='04d':
+            icon0 = QtGui.QIcon()
+            icon0.addPixmap(QtGui.QPixmap(":/images/images/sum.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.pushButton_7.setIcon(icon0)
+        elif data['weather'][0]['main'] =='02d':
+            icon1 = QtGui.QIcon()
+            icon1.addPixmap(QtGui.QPixmap(":/images/images/rain.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.pushButton_7.setIcon(icon1)
+        elif data['weather'][0]['main'] =='03d':
+            icon2 = QtGui.QIcon()
+            icon2.addPixmap(QtGui.QPixmap(":/images/images/cloud.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.pushButton_7.setIcon(icon2)
         self.label_17 = QtWidgets.QLabel(self.frame_5)
         self.label_17.setGeometry(QtCore.QRect(190, 210, 221, 21))
         self.label_17.setStyleSheet("border-radius: none;\n"
@@ -1502,7 +1517,6 @@ class Ui_MainWindow(object):
         text1=Date.toString("dddd")
         new_day= tem2.replace("{VALUE}",text1)
         self.temperature_3.setText(new_day)
-        
         self.temperature_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">25</span></p></body></html>"))
         tem4="<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">{VALUE}</span></p></body></html>"
         call_url = 'https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
@@ -1511,14 +1525,8 @@ class Ui_MainWindow(object):
         city_res = data["main"]
         current_temperature = city_res["temp"]
         new_tem= tem4.replace("{VALUE}",str(int(current_temperature-273)))
-        if data['weather'][0]['icon'] == '04d':
-            icon10 = QtGui.QIcon()
-            icon10.addPixmap(QtGui.QPixmap("images\images\sum.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.pushButton_7.setIcon(icon10)
-        elif data['weather'][0]['main'] == 'rain':
-            icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("images\images\rain.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.pushButton_7.setIcon(icon)
+        self.temperature_4.setText(new_tem)
+
         self.temperature_5.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
         self.temperature_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">PM2.5</span></p></body></html>"))
         self.temperature_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">AQI</span></p></body></html>"))

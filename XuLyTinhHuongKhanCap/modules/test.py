@@ -1,5 +1,6 @@
+Rem Rem Rem
 def weather(self):
-        api_address='https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
+        api_address='https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=59e434bde2d8ff7f30cfdb363d79aa61&lang=vi'
         json_data = requests.get(api_address).json()
         format_add = json_data['main']
 
@@ -31,13 +32,3 @@ def weather(self):
             icon.addPixmap(QtGui.QPixmap(":/Weather/animated/thunder.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.pushButton_3.setIcon(icon)
             self.label_text_weather.setText(new_text)
-
-
-    self.pushButton_3 = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton_3.setGeometry(QtCore.QRect(10, 10, 61, 61))
-        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_3.setStyleSheet("image: url(:/images/images/images/114.png);\n"
-"border: 3px solid rgb(255, 255, 255);\n"
-"border-radius: 29px;")
-        self.pushButton_3.setText("")
-        self.pushButton_3.setObjectName("pushButton_3")
