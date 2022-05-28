@@ -2555,8 +2555,19 @@ border: 3px solid rgb(255, 255, 255);
                             </rect>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">border-radius: none;
-border: 1px solid rgb(255, 255, 255);</string>
+                            <string notr="true">QLineEdit{	
+	border-radius: none;
+	border: 1px solid rgb(255, 255, 255);
+}
+QLineEdit:hover{
+	border-radius: none;
+	border: 1px solid rgb(170, 0, 255);
+}
+QLineEdit:hover:!pressed{
+	border-radius: none;
+	border: 1px solid rgb(170, 0, 255);
+}
+</string>
                            </property>
                            <property name="placeholderText">
                             <string>Vui lòng nhập thông tin</string>
@@ -2622,8 +2633,19 @@ border: none;</string>
                             </rect>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">border-radius: none;
-border: 1px solid rgb(255, 255, 255);</string>
+                            <string notr="true">QLineEdit{	
+	border-radius: none;
+	border: 1px solid rgb(255, 255, 255);
+}
+QLineEdit:hover{
+	border-radius: none;
+	border: 1px solid rgb(170, 0, 255);
+}
+QLineEdit:hover:!pressed{
+	border-radius: none;
+	border: 1px solid rgb(170, 0, 255);
+}
+</string>
                            </property>
                            <property name="placeholderText">
                             <string>Vui lòng nhập thông tin</string>
@@ -2656,8 +2678,19 @@ border: none;</string>
                             </rect>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">border-radius: none;
-border: 1px solid rgb(255, 255, 255);</string>
+                            <string notr="true">QLineEdit{	
+	border-radius: none;
+	border: 1px solid rgb(255, 255, 255);
+}
+QLineEdit:hover{
+	border-radius: none;
+	border: 1px solid rgb(170, 0, 255);
+}
+QLineEdit:hover:!pressed{
+	border-radius: none;
+	border: 1px solid rgb(170, 0, 255);
+}
+</string>
                            </property>
                            <property name="placeholderText">
                             <string>Vui lòng nhập thông tin</string>
@@ -2690,8 +2723,19 @@ border: none;</string>
                             </rect>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">border-radius: none;
-border: 1px solid rgb(255, 255, 255);</string>
+                            <string notr="true">QLineEdit{	
+	border-radius: none;
+	border: 1px solid rgb(255, 255, 255);
+}
+QLineEdit:hover{
+	border-radius: none;
+	border: 1px solid rgb(170, 0, 255);
+}
+QLineEdit:hover:!pressed{
+	border-radius: none;
+	border: 1px solid rgb(170, 0, 255);
+}
+</string>
                            </property>
                            <property name="placeholderText">
                             <string>Vui lòng nhập thông tin</string>
@@ -2700,10 +2744,10 @@ border: 1px solid rgb(255, 255, 255);</string>
                           <widget class="QPushButton" name="saveButton">
                            <property name="geometry">
                             <rect>
-                             <x>720</x>
+                             <x>730</x>
                              <y>370</y>
-                             <width>61</width>
-                             <height>41</height>
+                             <width>40</width>
+                             <height>40</height>
                             </rect>
                            </property>
                            <property name="cursor">
@@ -2716,9 +2760,21 @@ border: 1px solid rgb(255, 255, 255);</string>
                             <bool>false</bool>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">border-radius: none;
-border: none;
-image: url(:/images/images/images/save.png);</string>
+                            <string notr="true">QPushButton{	
+	border-radius: none;
+	border: none;
+	background-image: url(:/images/images/images/save.png);
+}
+QPushButton:hover:!pressed{
+	border-radius: 15px;
+	border: none;
+	background-color: rgb(170, 0, 255);
+}
+QPushButton:hover{
+	border-radius: 15px;
+	background-color: rgb(170, 0, 255);
+	border: 2px solid rgb(255, 255, 255);
+}</string>
                            </property>
                            <property name="text">
                             <string/>
