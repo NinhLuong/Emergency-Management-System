@@ -36,7 +36,11 @@ def get_text():
     return 0
 
 '''def called(text):
-    CALL("082114")'''
+    CALL("082114")
+    
+    
+    '''
+
 
 
 
