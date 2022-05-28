@@ -9,6 +9,7 @@ from widgets import *
 from threading import Thread
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 from chatbot import *
+from wellcome import *
 
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -24,6 +25,15 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
+
+        self.loginUI=Ui_MainWindow()
+        self.loginhandle= login_handle(self.loginUI)
+        self.loginhandle.btnLogin.clicked.connect(lambda: self.loadMain())
+        self.loginUI.show()
+
+        def loadlogin(self):
+            self.mainUI.hide()
+            self.loginUI.show()
 
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ///////////////////////////////////////////////////////////////
