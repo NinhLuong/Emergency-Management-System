@@ -59,7 +59,7 @@ def current_weather():
     city_res = data["main"]
     if data["cod"] != "404":
         city_res = data["main"]
-        current_temperature = city_res["temp"]-273
+        current_temperature = int(city_res["temp"]-273)
         current_pressure = city_res["pressure"]
         current_humidity = city_res["humidity"]
         suntime = data["sys"]
