@@ -1,0 +1,2 @@
+pyrcc5 resources.qrc -o resources_rc.py
+pyuic5 ui_splash_screen.ui -o ui_splash_screen.py
