@@ -1205,7 +1205,6 @@ class Ui_MainWindow(object):
         call_url = 'https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
         response = requests.get(call_url)
         data = response.json()
-        print(data["weather"][0]["icon"])
         if data['weather'][0]['icon'] =='04d':
             icon0 = QtGui.QIcon()
             icon0.addPixmap(QtGui.QPixmap(":/images/images/sum.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
