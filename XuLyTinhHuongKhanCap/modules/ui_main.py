@@ -1169,11 +1169,10 @@ class Ui_MainWindow(object):
 
         self.timer= QtCore.QTimer(MainWindow)
         self.timer.timeout.connect(self.setTime)
-        self.timer.start(2000)
-        
+        self.timer.start(3000)
         self.timer1= QtCore.QTimer(MainWindow)
         self.timer1.timeout.connect(self.setweather)
-        self.timer1.start(2000)
+        self.timer1.start(3000)
         
         self.label_4 = QtWidgets.QLabel(self.frame_5)
         self.label_4.setGeometry(QtCore.QRect(30, 250, 531, 21))
@@ -1578,48 +1577,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.addWidget(self.contentSettings)
         self.horizontalLayout_4.addWidget(self.extraRightBox)
         self.verticalLayout_6.addWidget(self.content)
-        self.bottomBar = QtWidgets.QFrame(self.contentBottom)
-        self.bottomBar.setMinimumSize(QtCore.QSize(0, 22))
-        self.bottomBar.setMaximumSize(QtCore.QSize(16777215, 22))
-        self.bottomBar.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.bottomBar.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.bottomBar.setObjectName("bottomBar")
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.bottomBar)
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_5.setSpacing(0)
-        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.creditsLabel = QtWidgets.QLabel(self.bottomBar)
-        self.creditsLabel.setMaximumSize(QtCore.QSize(16777215, 16))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(-1)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.creditsLabel.setFont(font)
-        self.creditsLabel.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.creditsLabel.setObjectName("creditsLabel")
-        self.horizontalLayout_5.addWidget(self.creditsLabel)
-        self.version = QtWidgets.QLabel(self.bottomBar)
-        self.version.setText("")
-        self.version.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.version.setObjectName("version")
-        self.horizontalLayout_5.addWidget(self.version)
-        self.frame_size_grip = QtWidgets.QFrame(self.bottomBar)
-        self.frame_size_grip.setMinimumSize(QtCore.QSize(20, 0))
-        self.frame_size_grip.setMaximumSize(QtCore.QSize(20, 16777215))
-        self.frame_size_grip.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_size_grip.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_size_grip.setObjectName("frame_size_grip")
-        self.horizontalLayout_5.addWidget(self.frame_size_grip)
-        self.verticalLayout_6.addWidget(self.bottomBar)
         self.verticalLayout_2.addWidget(self.contentBottom)
         self.appLayout.addWidget(self.contentBox)
         self.appMargins.addWidget(self.bgApp)
         MainWindow.setCentralWidget(self.styleSheet)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -1669,7 +1633,7 @@ class Ui_MainWindow(object):
         self.label_13.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600; color:#ffffff;\">Save</span></p></body></html>"))
         self.label_14.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-style:italic; color:#ffffff;\">Thông tin chính xác sẽ giúp công tác cứu hộ nhanh chóng hơn đấy!</span></p></body></html>"))
         self.label_16.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:9pt; font-style:italic; color:#55ff7f;\">Quá trình cập nhật thông tin hoàn tất!</span></p><p align=\"center\"><span style=\" font-size:9pt; font-style:italic; color:#55ff7f;\">Chúc bạn một ngày tốt lành!</span></p></body></html>"))
-        self.btn_message.setText(_translate("MainWindow", "Message"))
+        self.btn_message.setText(_translate("MainWindow", "Feedback"))
         self.btn_print.setText(_translate("MainWindow", "Print"))
         self.btn_logout.setText(_translate("MainWindow", "Logout"))
 
@@ -1716,15 +1680,20 @@ class Ui_MainWindow(object):
         response = requests.get(call_url)
         data = response.json()
 
-        if data['weather'][0]['icon'] =='03d':
-            icon0 = QtGui.QIcon()
-            icon0.addPixmap(QtGui.QPixmap(":/images/images/sum.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.pushButton_7.setIcon(icon0)
-        elif data['weather'][0]['main'] =='02d':
-            icon1 = QtGui.QIcon()
-            icon1.addPixmap(QtGui.QPixmap(":/images/images/rain.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.pushButton_7.setIcon(icon1)
-        elif data['weather'][0]['main'] =='04d':
-            icon2 = QtGui.QIcon(":/images/images/cloud.png")
-            icon2.addPixmap(QtGui.QPixmap(":/images/images/cloud.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.pushButton_7.setIcon(icon2)
+        if data['weather'][0]['main'] =='Clear':
+            self.pushButton_7.setStyleSheet("border: none;\n"
+"background: none;\n"
+"image: url(images\images\sum.png);")
+        elif data['weather'][0]['main'] =='Rain':
+            self.pushButton_7.setStyleSheet("border: none;\n"
+"background: none;\n"
+"image: url(images/images/rain.png);")
+
+        elif data['weather'][0]['icon'] =='03n':
+            self.pushButton_7.setStyleSheet("border: none;\n"
+"background: none;\n"
+"image: url(images/images/night.png);")
+        elif data['weather'][0]['main'] =='Clouds':
+            self.pushButton_7.setStyleSheet("border: none;\n"
+"background: none;\n"
+"image: url(images/images/cloud.png);")
