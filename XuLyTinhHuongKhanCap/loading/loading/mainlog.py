@@ -15,7 +15,7 @@ from PySide2.QtWidgets import *
 
 # GUI FILE
 from splash_screen import Ui_SplashScreen
-from ui_main import Ui_MainWindow
+from ui_log import Ui_MainWindow
 
 # GLOBALS
 counter = 0
