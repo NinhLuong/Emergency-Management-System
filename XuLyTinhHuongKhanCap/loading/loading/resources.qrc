@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="images">
+    <file>images/BLUE.png</file>
+    <file>images/khoidong300.png</file>
+    <file>images/khoidong.png</file>
+  </qresource>
+</RCC>
