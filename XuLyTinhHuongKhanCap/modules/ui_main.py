@@ -1169,11 +1169,8 @@ class Ui_MainWindow(object):
 
         self.timer= QtCore.QTimer(MainWindow)
         self.timer.timeout.connect(self.setTime)
-        self.timer.start(3000)
-        self.timer1= QtCore.QTimer(MainWindow)
-        self.timer1.timeout.connect(self.setweather)
-        self.timer1.start(3000)
-        
+        self.timer.start(2000)
+
         self.label_4 = QtWidgets.QLabel(self.frame_5)
         self.label_4.setGeometry(QtCore.QRect(30, 250, 531, 21))
         self.label_4.setStyleSheet("border: 2px solid rgb(255, 255, 255);\n"
@@ -1658,12 +1655,11 @@ class Ui_MainWindow(object):
         time= QtCore.QTime.currentTime()
         text= time.toString("HH:mm")
         self.Time.setText(text)
-
-        if(Opened_UART == 0):
-                call_url = 'https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
-                response = requests.get(call_url)
-                data = response.json()
-                city_res = data["main"]
+        call_url = 'https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
+        response = requests.get(call_url)
+        data = response.json()
+        city_res = data["main"]
+        if(Opened_UART == 0):    
                 current_temperature = city_res["temp"] - 273
                 tem4="<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">{VALUE}</span></p></body></html>"
                 new_tem= tem4.replace("{VALUE}",str(int(current_temperature)))
@@ -1675,25 +1671,20 @@ class Ui_MainWindow(object):
 
         self.temperature_4.setText(new_tem)
 
-    def setweather(self):
-        call_url = 'https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
-        response = requests.get(call_url)
-        data = response.json()
-
         if data['weather'][0]['main'] =='Clear':
-            self.pushButton_7.setStyleSheet("border: none;\n"
+                self.pushButton_7.setStyleSheet("border: none;\n"
 "background: none;\n"
 "image: url(images\images\sum.png);")
         elif data['weather'][0]['main'] =='Rain':
-            self.pushButton_7.setStyleSheet("border: none;\n"
+                self.pushButton_7.setStyleSheet("border: none;\n"
 "background: none;\n"
 "image: url(images/images/rain.png);")
 
         elif data['weather'][0]['icon'] =='03n':
-            self.pushButton_7.setStyleSheet("border: none;\n"
+                self.pushButton_7.setStyleSheet("border: none;\n"
 "background: none;\n"
 "image: url(images/images/night.png);")
         elif data['weather'][0]['main'] =='Clouds':
-            self.pushButton_7.setStyleSheet("border: none;\n"
+                self.pushButton_7.setStyleSheet("border: none;\n"
 "background: none;\n"
 "image: url(images/images/cloud.png);")
