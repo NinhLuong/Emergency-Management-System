@@ -15,7 +15,7 @@ from PyQt5.QtWidgets import QFrame
 from . resources_rc import *
 import requests
 from . Hardware import *
-
+import time
 # from threading import Thread
 Sdt113 = "0824451334"
 Sdt114 = "0824451334"
@@ -1169,7 +1169,7 @@ class Ui_MainWindow(object):
 
         self.timer= QtCore.QTimer(MainWindow)
         self.timer.timeout.connect(self.setTime)
-        self.timer.start(2000)
+        self.timer.start(5000)
 
         self.label_4 = QtWidgets.QLabel(self.frame_5)
         self.label_4.setGeometry(QtCore.QRect(30, 250, 531, 21))
@@ -1588,9 +1588,9 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.titleLeftApp.setText(_translate("MainWindow", "Emergency Services"))
         self.titleLeftDescription.setText(_translate("MainWindow", "Uy_Dat_Ninh"))
-        self.toggleButton.setText(_translate("MainWindow", "Hide"))
-        self.btn_home.setText(_translate("MainWindow", "Home"))
-        self.btn_new.setText(_translate("MainWindow", "Setting"))
+        self.toggleButton.setText(_translate("MainWindow", "Ẩn"))
+        self.btn_home.setText(_translate("MainWindow", "Trang chủ"))
+        self.btn_new.setText(_translate("MainWindow", "Cài đặtq"))
         self.extraLabel.setText(_translate("MainWindow", "Left Box"))
         self.titleRightInfo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; color:#ffffff;\">XỬ LÝ TÌNH HUỐNG KHẨN CẤP</span></p></body></html>"))
         self.settingsTopBtn.setToolTip(_translate("MainWindow", "Settings"))
@@ -1635,19 +1635,52 @@ class Ui_MainWindow(object):
         self.btn_logout.setText(_translate("MainWindow", "Logout"))
 
     def btn113(self):
+        text1= "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; color:#ffffff;\">{VALUE}</span></p></body></html>"
+        new_text1= text1.replace("{VALUE}","Báo động")
+        self.label_2.setText(new_text1)
+        self.label_6.setStyleSheet("background-color: rgb(255, 0, 0);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 20px;")
         print("Button 113 touch")
-        #Call(Sdt113)
-        # self.timer.stop()
-        
         Call(Sdt113)
-        # time.sleep(25)
-        # self.timer.start(1000)
+        
+        time.sleep(5)
+        new_text2= text1.replace("{VALUE}","An toàn")
+        self.label_2.setText(new_text2)
+        self.label_6.setStyleSheet("background-color: rgb(0, 255, 0);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 20px;")        
         
     def btn114(self):
-        print("Button 114 touch")
-        Call(Sdt114)
+        print("Button 113 touch")
+        Call(Sdt113)
+        text2= "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; color:#ffffff;\">{VALUE}</span></p></body></html>"
+        new_text2= text2.replace("{VALUE}","Báo động")
+        self.label_2.setText(new_text2)
+        self.label_6.setStyleSheet("background-color: rgb(255, 0, 0);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 20px;")
+        time.sleep(5)
+        new_text2= text2.replace("{VALUE}","An toàn")
+        self.label_2.setText(new_text2)
+        self.label_6.setStyleSheet("background-color: rgb(0, 255, 0);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 20px;")  
     def btn115(self):
-        print("Button 115 touch")
+        print("Button 113 touch")
+        Call(Sdt113)
+        text3= "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; color:#ffffff;\">{VALUE}</span></p></body></html>"
+        new_text3= text3.replace("{VALUE}","Báo động")
+        self.label_2.setText(new_text3)
+        self.label_6.setStyleSheet("background-color: rgb(255, 0, 0);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 20px;")
+        time.sleep(5)
+        new_text3= text3.replace("{VALUE}","An toàn")
+        self.label_2.setText(new_text3)
+        self.label_6.setStyleSheet("background-color: rgb(0, 255, 0);\n"
+"border: 3px solid rgb(255, 255, 255);\n"
+"border-radius: 20px;")  
     def btnbql(self):
         print("Button bql touch")
 
@@ -1655,36 +1688,45 @@ class Ui_MainWindow(object):
         time= QtCore.QTime.currentTime()
         text= time.toString("HH:mm")
         self.Time.setText(text)
-        call_url = 'https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
-        response = requests.get(call_url)
-        data = response.json()
-        city_res = data["main"]
-        if(Opened_UART == 0):    
-                current_temperature = city_res["temp"] - 273
-                tem4="<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">{VALUE}</span></p></body></html>"
-                new_tem= tem4.replace("{VALUE}",str(int(current_temperature)))
-        else:
+
+        try:
+                call_url = 'https://api.openweathermap.org/data/2.5/weather?lat=10.850145464871641&lon=106.7716601973813&appid=d80948795e2ec6257f1f62303cf81808&lang=vi'
+                response = requests.get(call_url)
+                data = response.json()
+                city_res = data["main"]
+                if(Opened_UART == 0):    
+                        current_temperature = city_res["temp"] - 273
+                        tem4="<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">{VALUE}</span></p></body></html>"
+                        new_tem= tem4.replace("{VALUE}",str(int(current_temperature)))
+                        self.temperature_4.setText(new_tem)
+                        
+                if data['weather'][0]['main'] =='Clear':
+                        self.pushButton_7.setStyleSheet("border: none;\n"
+                        "background: none;\n"
+                        "image: url(images\images\sum.png);")
+                elif data['weather'][0]['main'] =='Rain':
+                        self.pushButton_7.setStyleSheet("border: none;\n"
+                        "background: none;\n"
+                        "image: url(images/images/rain.png);")
+
+                elif data['weather'][0]['icon'] =='03n':
+                        self.pushButton_7.setStyleSheet("border: none;\n"
+                        "background: none;\n"
+                        "image: url(images/images/night.png);")
+                elif data['weather'][0]['main'] =='Clouds':
+                        self.pushButton_7.setStyleSheet("border: none;\n"
+                        "background: none;\n"
+                        "image: url(images/images/cloud.png);")
+                
+        except requests.exceptions.ConnectionError:
+                print("Hãy kết nối mạng")
+        
+        if(Opened_UART == 1):    
                 GetTempFromHardware()
                 print(global_temp)
                 tem4="<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#ffffff;\">{VALUE}</span></p></body></html>"
                 new_tem= tem4.replace("{VALUE}",str(global_temp))
+                self.temperature_4.setText(new_tem)
 
-        self.temperature_4.setText(new_tem)
+        
 
-        if data['weather'][0]['main'] =='Clear':
-                self.pushButton_7.setStyleSheet("border: none;\n"
-"background: none;\n"
-"image: url(images\images\sum.png);")
-        elif data['weather'][0]['main'] =='Rain':
-                self.pushButton_7.setStyleSheet("border: none;\n"
-"background: none;\n"
-"image: url(images/images/rain.png);")
-
-        elif data['weather'][0]['icon'] =='03n':
-                self.pushButton_7.setStyleSheet("border: none;\n"
-"background: none;\n"
-"image: url(images/images/night.png);")
-        elif data['weather'][0]['main'] =='Clouds':
-                self.pushButton_7.setStyleSheet("border: none;\n"
-"background: none;\n"
-"image: url(images/images/cloud.png);")

@@ -22,7 +22,7 @@ def get_audio():
     with sr.Microphone() as source:
         print("Tôi: ", end='')
         print(   )
-        audio = r.listen(source, phrase_time_limit=5)
+        audio = r.listen(source, phrase_time_limit=8)
         try:
             text = r.recognize_google(audio, language="vi-VN")
             print(text)
@@ -38,9 +38,21 @@ def get_text():
             return text.lower()
     return 0
 
-def cal():
+def call114():
     Call("0824451334")
-    speak("đang gọi")
+    speak("đang gọi 114")
+
+def call113():
+    Call("0824451334")
+    speak("đang gọi 113")
+
+def call115():
+    Call("0824451334")
+    speak("đang gọi 115")
+
+def callbql():
+    Call("0824451334")
+    speak("đang gọi ban quản lý") 
     
 def get_time(text):
     now = datetime.datetime.now()
@@ -87,5 +99,11 @@ def assistant():
             current_weather()
         elif "ngày" in text or "giờ" in text or "tháng"  in text or" phút" in text or "năm" in text: 
             get_time(text)  
-        elif "cháy" in text:
-            cal()
+        elif "cháy" or " cứu hoả" in text:
+            call114()
+        elif " gọi cảnh sát" or "cướp"  or " gọi công an"in text:
+            call113()
+        elif "cứu thương" or " cấp cứu" in text:
+            call115()
+        elif "ban quản lý" in text:
+            callbql()
